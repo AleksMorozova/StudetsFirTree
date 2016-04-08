@@ -185,3 +185,4 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+TestApplication/TestApplication/obj/Debug/TestApplication.csproj.FileListAbsolute.txt
