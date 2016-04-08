@@ -10,7 +10,7 @@ namespace TestApplication
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello from Test_1, one more time from Test_1, Test_2");
+            Console.WriteLine(" create branch BADITSA  Hello from Test_1, one big choke time from Test_1, Test_2 ");
             Console.ReadKey();
         }
     }
