@@ -10,7 +10,7 @@ namespace TestApplication
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
+            Console.WriteLine("Hello from Test_1, Test_2, my branch Nikita, Oleg branch, Voloshyn branch");
             Console.WriteLine("k3k");
 =======
             Console.WriteLine("Hello from Test_1, Test_2");
