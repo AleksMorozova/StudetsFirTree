@@ -1,1 +1,7 @@
 c:\users\omor.design\documents\visual studio 2013\Projects\TestApplication\TestApplication\bin\Debug\TestApplication.exe.config
+C:\Users\HP\Documents\GitHub\StudetsFirTree\TestApplication\TestApplication\bin\Debug\TestApplication.exe.config
+C:\Users\HP\Documents\GitHub\StudetsFirTree\TestApplication\TestApplication\bin\Debug\TestApplication.exe
+C:\Users\HP\Documents\GitHub\StudetsFirTree\TestApplication\TestApplication\bin\Debug\TestApplication.pdb
+C:\Users\HP\Documents\GitHub\StudetsFirTree\TestApplication\TestApplication\obj\Debug\TestApplication.csprojResolveAssemblyReference.cache
+C:\Users\HP\Documents\GitHub\StudetsFirTree\TestApplication\TestApplication\obj\Debug\TestApplication.exe
+C:\Users\HP\Documents\GitHub\StudetsFirTree\TestApplication\TestApplication\obj\Debug\TestApplication.pdb

@@ -11,6 +11,10 @@ namespace TestApplication
         static void Main(string[] args)
         {
             Console.WriteLine("Hello from Test_1, Test_2, my branch Nikita, Oleg branch, Voloshyn branch");
+            Console.WriteLine("k3k");
+=======
+            Console.WriteLine("Hello from Test_1, Test_2");
+>>>>>>> e0883dbc9e3cc6f77194f10e64a31fff13177f8f
             Console.ReadKey();
         }
     }
