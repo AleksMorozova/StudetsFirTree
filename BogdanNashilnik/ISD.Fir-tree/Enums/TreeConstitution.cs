@@ -1,0 +1,5 @@
+﻿enum TreeConstitution
+{
+    Slim,
+    Fat
+}
