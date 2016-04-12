@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OOPSong
 {
@@ -18,7 +14,7 @@ namespace OOPSong
             {
                 Born(this, EventArgs.Empty);
                 this.High = 0;
-                 this.Color= Colors.green;        
+                this.Color= Colors.green;        
             }
         }       
 
