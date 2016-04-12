@@ -9,12 +9,12 @@ namespace Spruce
         {
             Forest _forest = new Forest();
 
-            _forest.Trees.Add(new Spruce());
+            _forest.AddTree(new Spruce());
 
-            Year.ChangeSeason();
-            Year.ChangeSeason();
-            Year.ChangeSeason();
-            Year.ChangeSeason();
+            for(int i = 0; i < 12; i++)
+            {
+                Year.ChangeMonth();
+            }
 
             Console.ReadKey();
         }

@@ -1,19 +1,20 @@
-﻿using System.Collections.Generic;
+﻿using Spruce.Trees;
+using System.Collections.Generic;
 
 namespace Spruce
 {
     public class Forest
     {
-        private List<Plant> _trees;
-        public List<Plant> Trees
-        {
-            get;
-            private set;
-        }
+        private List<IPlant> _trees;
 
         public Forest()
         {
-            Trees = new List<Plant>();
+            _trees = new List<IPlant>();
+        }
+
+        public void AddTree(IPlant _plant)
+        {
+            _trees.Add(_plant);
         }
     }
 }

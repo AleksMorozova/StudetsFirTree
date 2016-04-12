@@ -44,15 +44,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forest.cs" />
+    <Compile Include="Trees\Oak.cs" />
     <Compile Include="Props\Seasons.cs" />
     <Compile Include="Props\Properties.cs" />
     <Compile Include="Props\IPersistent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Plant.cs" />
+    <Compile Include="Trees\IPlant.cs" />
     <Compile Include="Props\SeasonsEventArgs.cs" />
     <Compile Include="Props\Year.cs" />
-    <Compile Include="Spruce.cs" />
+    <Compile Include="Trees\Spruce.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
