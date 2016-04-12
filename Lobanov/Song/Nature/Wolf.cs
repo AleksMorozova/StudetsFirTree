@@ -5,8 +5,16 @@ using System.Text;
 
 namespace Song
 {
-    class Wolf:Animal, IAngry
+    class Wolf:Animal
     {
+        public override Character GetAnimalCharacter()
+        {
+            return Character.Angry;
+        }
+        public Wolf()
+        {
+
+        }
         public override void Move()
         {
             Console.WriteLine(" рысцою пробегал");

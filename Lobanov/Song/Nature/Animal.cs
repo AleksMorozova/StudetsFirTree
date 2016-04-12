@@ -5,8 +5,16 @@ using System.Text;
 
 namespace Song
 {
-    class Animal
+    abstract class Animal
     {
+        public virtual Character GetAnimalCharacter()
+        {
+            return Character.None;
+        }
+        public virtual bool IsHairy()
+        {
+            return false;
+        }
         public virtual void Move()
         {
             Console.WriteLine("перемещается");

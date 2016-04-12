@@ -10,10 +10,7 @@ namespace Song
         public void Freeze(Fir fir)
         {
 
-            
-            Console.WriteLine("Мороз её укутывал, ");
             fir.Wrapped = true;
-            Console.Write("Смотри, ");
             fir.Freeze();
         }
     }

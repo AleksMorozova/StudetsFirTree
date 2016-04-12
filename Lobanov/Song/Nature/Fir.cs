@@ -5,11 +5,17 @@ using System.Text;
 
 namespace Song
 {
-    class Fir:ICuttable, IColoured, ISlim, IElegant
+    class Fir: Tree
     {
 
-        int size = 1;
+        
+
         public bool IsSleep { get; set; }
+
+        public bool IsElegant()
+        {
+            return true;
+        }
         public bool Wrapped { get; set; }
 
 
@@ -17,57 +23,36 @@ namespace Song
         {
             if (Wrapped)
             {
-                Console.WriteLine("Не замерзай");
+                // Не замерзай
             }
             else
             {
-                Console.WriteLine("замёрзла");
+                Console.WriteLine("замёрзла!");
             }
         }
 
-
-        private bool cutted=false;
 
         public Fir()
         {
-            Console.WriteLine(" Родилась ёлочка");
-        }
-
-        
-        public bool Cutted 
-        {
-            get
-            {
-                return cutted;
-            }
-            private set
-            {
-                cutted = value;
-            }
             
         }
 
-        public void Cut(CutType type)
-        {
-            Cutted = true;
-        }
-        
-
-        public bool IsSlim(Seasons season)
+        public override bool IsSlim(Seasons season)
         {
             return true;
         }
 
-        public Colors GetColor(Seasons season)
+        public override Colors GetColor(Seasons season)
         {
             return Colors.Green;
         }
 
-        public void Grow()
+        public override void Grow()
         {
             size++;
-            Console.WriteLine(" она росла");
         }
+
+
         public void SetHappyness(IEnumerable<Kid> kids)
         {
             foreach (Kid current in kids)

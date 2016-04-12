@@ -8,11 +8,9 @@ namespace Song
     class Snowstorm
     {
 
-        public void Song(Fir fir)
+        public void Song(Fir fir, string text)
         {
-            Console.WriteLine("Метель ей пела песенку:");
-            Console.WriteLine("«Спи, ёлочка, бай-бай!»");
-
+            Console.WriteLine(text);
             fir.IsSleep = true;
         }
     }
