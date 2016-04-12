@@ -3,7 +3,7 @@ using System;
 
 namespace ISD.Fir_tree.Classes
 {
-    class Blizzard : ISinging, INamed
+    class Blizzard : IHaveName
     {
         private string name;
         public string Name
@@ -20,7 +20,7 @@ namespace ISD.Fir_tree.Classes
         }
         public Blizzard() : this("Безымянная метель.") { }
 
-        public void Sing(Song song, params INamed[] listeners)
+        public void Sing(Song song, params IHaveName[] listeners)
         {
             foreach (var listener in listeners)
             {

@@ -3,7 +3,7 @@ using System;
 
 namespace ISD.Fir_tree.Classes
 {
-    class Horse : Animal, IHarness
+    class Horse : Animal
     {
         private ICart cart;
 

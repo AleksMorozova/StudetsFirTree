@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ISD.Fir_tree.Classes
 {
-    class Forest : INamed
+    class Forest : IHaveName
     {
         private string name;
         private List<Tree> trees;
@@ -14,13 +14,6 @@ namespace ISD.Fir_tree.Classes
             get
             {
                 return name;
-            }
-        }
-        public List<Tree> Trees
-        {
-            get
-            {
-                return trees;
             }
         }
 
@@ -36,6 +29,23 @@ namespace ISD.Fir_tree.Classes
             this.trees.Add(tree);
             Console.WriteLine("В лес \"{0}\" посажено дерево \"{1}\".", this.name, tree.Name);
         }
-
+        public void Grow(int age)
+        {
+            foreach (Tree tree in this.trees)
+            {
+                tree.Grow(age);
+            }
+        }
+        public void ChangeSeason(Season season)
+        {
+            foreach (Tree tree in this.trees)
+            {
+                tree.ChangeSeason(season);
+            }
+        }
+        public Tree GetTree(Tree tree)
+        {
+            return this.trees[this.trees.IndexOf(tree)];
+        }
     }
 }

@@ -3,7 +3,7 @@ using System;
 
 namespace ISD.Fir_tree.Classes
 {
-    class OldMan : Person, ILumberjack
+    class OldMan : Person
     {
         public OldMan() : base("Безымянный старик", 60) { }
 

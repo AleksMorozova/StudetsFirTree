@@ -3,7 +3,7 @@ using System;
 
 namespace ISD.Fir_tree.Classes
 {
-    class ChristmasTreeToy : ITreeDecorator
+    class ChristmasTreeToy
     {
 
     }

@@ -1,6 +1,7 @@
 ﻿using ISD.Fir_tree.Classes;
 using System;
 using System.Collections.Generic;
+using static ISD.Fir_tree.Classes.Year;
 
 namespace ISD.Fir_tree
 {
@@ -10,20 +11,23 @@ namespace ISD.Fir_tree
         {
             // В лесу
             var forest = new Forest();
+            Year.OnSeasonChanged += new SeasonChanged((sender, e) => forest.ChangeSeason(((SeasonEventArgs)e).Season));
             // Родилась ёлочка
             var fir = new Fir("Ёлочка");
             forest.Plant(fir);
+            forest.Plant(new Oak());
             // В лесу она росла
-            forest.Trees[forest.Trees.IndexOf(fir)].Grow(5);
+            var age = 5;
+            forest.Grow(age);
             // Зимой
-            var season = Season.Winter;
-            fir.ChangeSeason(season);
+            Console.WriteLine("Текущее время года: {0}.", Year.CurrentSeason);
             // Стройная, зелёная была
             Console.WriteLine(fir.Color);
             Console.WriteLine(fir.Constitution);
             // И летом
-            season = Season.Summer;
-            fir.ChangeSeason(season);
+            Year.ChangeSeason();
+            Year.ChangeSeason();
+            Console.WriteLine("Текущее время года: {0}.", Year.CurrentSeason);
             // Стройная, зелёная была
             Console.WriteLine(fir.Color);
             Console.WriteLine(fir.Constitution);
@@ -84,6 +88,5 @@ namespace ISD.Fir_tree
             party.ChristmasTree = felledFir;
             Console.ReadKey();
         }
-
     }
 }

@@ -6,9 +6,9 @@ namespace ISD.Fir_tree.Classes
 {
     class FelledFir : FelledTree, IChristmasTree
     {
-        private List<ITreeDecorator> decorations;
+        private List<ChristmasTreeToy> decorations;
 
-        public List<ITreeDecorator> Decorations
+        public List<ChristmasTreeToy> Decorations
         {
             get
             {
@@ -27,10 +27,10 @@ namespace ISD.Fir_tree.Classes
         public FelledFir(Tree tree)
         {
             this.name = tree.Name + "(срублена)";
-            this.decorations = new List<ITreeDecorator>();
+            this.decorations = new List<ChristmasTreeToy>();
         }
 
-        public void Decorate(ITreeDecorator decoration)
+        public void Decorate(ChristmasTreeToy decoration)
         {
             this.decorations.Add(decoration);
             Console.WriteLine("Срубленную ёлку \"{0}\" украсили игрушкой.", this.name);

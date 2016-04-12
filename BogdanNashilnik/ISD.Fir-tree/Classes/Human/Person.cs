@@ -2,7 +2,7 @@
 
 namespace ISD.Fir_tree.Classes
 {
-    class Person : INamed
+    class Person : IHaveName
     {
         protected string name;
         protected int age;

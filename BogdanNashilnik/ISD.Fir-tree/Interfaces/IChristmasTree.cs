@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using ISD.Fir_tree.Classes;
+using System.Collections.Generic;
 
 namespace ISD.Fir_tree.Interfaces
 {
-    interface IChristmasTree : IFancy, INamed
+    interface IChristmasTree : IHaveName
     {
-        List<ITreeDecorator> Decorations { get; }
-        void Decorate(ITreeDecorator decoration);
+        List<ChristmasTreeToy> Decorations { get; }
+        void Decorate(ChristmasTreeToy decoration);
+        bool Fancy { get; }
     }
 }

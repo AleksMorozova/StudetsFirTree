@@ -3,7 +3,7 @@ using System;
 
 namespace ISD.Fir_tree.Classes
 {
-    class Frost : ISaying, INamed
+    class Frost : IHaveName
     {
         private string name;
         public string Name
