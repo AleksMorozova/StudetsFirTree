@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ISD_Course_task_fir_tree
 {
-    interface Tree
+    interface ITree 
     {
-        Colors Color { get; }
+        PlantColors Color { get; }
         Waists Waist { get; }
-        void Grow(string frase);
+        void Grow(string growPlace);
+        void SeasonChangedReaction(Seasons currentSeason);
     }
 }
