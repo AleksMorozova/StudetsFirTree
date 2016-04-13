@@ -6,20 +6,19 @@ using System.Threading.Tasks;
 
 namespace ISD_Course_task_fir_tree
 {
-    class FirTree : Tree
+    class FirTree : ITree
     {
         private string name;
-        private Colors color;
-        private Waists waist;
         public string Name { get { return name; } }
-        public Colors Color { get { return color; } }
-        public Waists Waist { get { return waist; } }
-        public FirTree(string name, Colors color, Waists waist)
+        public PlantColors Color { get { return PlantColors.Green; } }
+        public Waists Waist { get { return Waists.Shapely; } }
+        public FirTree(string name, string growBorn)
         {
             this.name = name;
-            this.color = color;
-            this.waist = waist;
+            Console.WriteLine("В {0} родилась елочка", growBorn);
+            Year.SeasonChanged += SeasonChangedReaction;
         }
-        public void Grow(string frase) { Console.WriteLine(frase); }
+        public void Grow(string growPlace) { Console.WriteLine("В {0} она росла", growPlace); }
+        public void SeasonChangedReaction(Seasons currentSeason) { }
     }
 }

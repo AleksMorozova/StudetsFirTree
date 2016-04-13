@@ -8,31 +8,19 @@ namespace ISD_Course_task_fir_tree
 {
     class Forest
     {
-        private const int defaultTreeCount = 100;
-        private Tree[] forestTrees;
-        private YearTimes yearTime;
-        public Tree[] ForestTrees { get { return forestTrees; } }
-        public YearTimes YearTime
-        {
-            get { return yearTime; }
-            set { yearTime = value; }
-        }
+        private List<ITree> forestTrees;
         public Forest()
         {
-            forestTrees = new Tree[defaultTreeCount];
+            forestTrees = new List<ITree>();
         }
-        public Forest(Tree firstTreeInForest)
+        public void AddTree(ITree treeInForest)
         {
-            forestTrees = new Tree[defaultTreeCount];
-            forestTrees[0] = firstTreeInForest;
-            if(firstTreeInForest is FirTree)
-            {
-                Console.WriteLine("В лесу родилась елочка");
-            }
+            forestTrees.Add(treeInForest);
         }
-        public Forest(Tree[] newForest)
+        public void GrowAllPlants()
         {
-            forestTrees = newForest;
+            foreach (ITree currentTree in forestTrees)
+                currentTree.Grow("лесу");
         }
     }
 }

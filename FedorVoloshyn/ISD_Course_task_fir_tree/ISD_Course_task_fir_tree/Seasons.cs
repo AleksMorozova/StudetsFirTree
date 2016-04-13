@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace ISD_Course_task_fir_tree
 {
-    enum PlantColors
+    public enum Seasons
     {
-        Green,
-        Blue,
-        Grey,
-        Yellow,
-        Bold
+        Winter,
+        Summer
     }
 }
