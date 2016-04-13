@@ -1,4 +1,4 @@
-﻿enum TreeConstitution
+﻿public enum TreeConstitution
 {
     Slim,
     Fat

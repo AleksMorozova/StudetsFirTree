@@ -2,7 +2,7 @@
 
 namespace ISD.Fir_tree.Classes
 {
-    class Fir : Tree
+    public class Fir : Tree
     {
         const int MAX_HEIGHT = 3;
 

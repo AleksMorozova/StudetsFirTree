@@ -4,7 +4,7 @@ using ISD.Fir_tree.Classes;
 
 namespace ISD.Fir_tree.Classes
 {
-    abstract class Tree : IHaveName, ISnowed
+    abstract public class Tree : IHaveName, ISnowed
     {
         protected string name;
         protected int age;

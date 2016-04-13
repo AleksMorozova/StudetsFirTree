@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISD.Fir_tree.Classes
 {
-    class Oak : Tree
+    public class Oak : Tree
     {
         const int MAX_HEIGHT = 5;
 

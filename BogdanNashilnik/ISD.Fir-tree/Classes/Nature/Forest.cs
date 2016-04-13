@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ISD.Fir_tree.Classes
 {
-    class Forest : IHaveName
+    public class Forest : IHaveName
     {
         private string name;
         private List<Tree> trees;
@@ -14,6 +14,13 @@ namespace ISD.Fir_tree.Classes
             get
             {
                 return name;
+            }
+        }
+        public int TreesCount
+        {
+            get
+            {
+                return this.trees.Count;
             }
         }
 
