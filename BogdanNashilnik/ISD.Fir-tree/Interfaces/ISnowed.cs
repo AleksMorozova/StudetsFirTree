@@ -1,6 +1,6 @@
 ﻿namespace ISD.Fir_tree.Interfaces
 {
-    interface ISnowed : INamed
+    interface ISnowed : IHaveName
     {
         bool WrappedWithSnow { get; set; }
     }

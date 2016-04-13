@@ -7,9 +7,9 @@ namespace ISD.Fir_tree.Classes
     class WoodSledge : ICart
     {
         const int MAX_CAPACITY = 10;
-        private List<INamed> cargo;
+        private List<IHaveName> cargo;
 
-        public List<INamed> Cargo
+        public List<IHaveName> Cargo
         {
             get
             {
@@ -27,11 +27,11 @@ namespace ISD.Fir_tree.Classes
 
         public WoodSledge()
         {
-            this.cargo = new List<INamed>();
+            this.cargo = new List<IHaveName>();
             this.WheelsType = WheelsType.Runners;
         }
 
-        public bool Put(INamed obj)
+        public bool Put(IHaveName obj)
         {
             if (this.cargo.Count >= MAX_CAPACITY)
             {

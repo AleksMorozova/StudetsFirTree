@@ -4,15 +4,15 @@ using ISD.Fir_tree.Classes;
 
 namespace ISD.Fir_tree.Classes
 {
-    abstract class Tree : INamed, IGrowing, ISeasonable, IColourful, ISnowed, IAnimalContainer
+    abstract class Tree : IHaveName, ISnowed
     {
         protected string name;
         protected int age;
         protected double height;
         protected TreeConstitution constitution;
-        protected Season season;
         protected bool wrappedWithSnow;
         protected Animal animal;
+        protected Color color;
 
         public int Age
         {
@@ -40,6 +40,14 @@ namespace ISD.Fir_tree.Classes
                 return name;
             }
         }
+        public Color Color
+        {
+            get
+            {
+                Console.Write("Цвет дерева \"{0}\": ", this.name);
+                return this.color;
+            }
+        }
 
         public virtual void Grow(int age)
         {
@@ -51,15 +59,8 @@ namespace ISD.Fir_tree.Classes
             this.GrowInHeight(age);
         }
         protected abstract void GrowInHeight(int age);
-        public Season Season
-        {
-            get
-            {
-                return season;
-            }
-        }
         public abstract TreeConstitution Constitution { get; }
-        public abstract Color Color { get; }
+        
         public bool WrappedWithSnow
         {
             get

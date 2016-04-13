@@ -3,7 +3,7 @@ using ISD.Fir_tree.Interfaces;
 
 namespace ISD.Fir_tree.Classes
 {
-    abstract class Animal : INamed, IColourful
+    abstract class Animal : IHaveName
     {
         protected string name;
         protected Color color;

@@ -1,9 +1,9 @@
 ﻿namespace ISD.Fir_tree.Interfaces
 {
-    interface ICart : INamed
+    interface ICart : IHaveName
     {
         WheelsType WheelsType { get; set; }
-        bool Put(INamed obj);
+        bool Put(IHaveName obj);
         void Remove();
     }
 }
