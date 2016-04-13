@@ -47,11 +47,9 @@
             this.buttonBody = new System.Windows.Forms.Button();
             this.buttonHead = new System.Windows.Forms.Button();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.новаяИграToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.загрузитьБойИзФайлаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сохранитьБойВФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveFileDialogSaveBattle = new System.Windows.Forms.SaveFileDialog();
-            this.openFileDialogOpenBattle = new System.Windows.Forms.OpenFileDialog();
+            this.menuNewGame = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuLoadGame = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSaveGame = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeftFighter)).BeginInit();
             this.panelLeftFighter.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -271,44 +269,35 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.новаяИграToolStripMenuItem,
-            this.загрузитьБойИзФайлаToolStripMenuItem,
-            this.сохранитьБойВФайлToolStripMenuItem});
+            this.menuNewGame,
+            this.menuLoadGame,
+            this.menuSaveGame});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1036, 24);
             this.menuStrip.TabIndex = 6;
             this.menuStrip.Text = "menuStrip1";
             // 
-            // новаяИграToolStripMenuItem
+            // menuNewGame
             // 
-            this.новаяИграToolStripMenuItem.Name = "новаяИграToolStripMenuItem";
-            this.новаяИграToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.новаяИграToolStripMenuItem.Text = "Новая игра";
-            this.новаяИграToolStripMenuItem.Click += new System.EventHandler(this.новаяИграToolStripMenuItem_Click);
+            this.menuNewGame.Name = "menuNewGame";
+            this.menuNewGame.Size = new System.Drawing.Size(81, 20);
+            this.menuNewGame.Text = "Новая игра";
+            this.menuNewGame.Click += new System.EventHandler(this.новаяИграToolStripMenuItem_Click);
             // 
-            // загрузитьБойИзФайлаToolStripMenuItem
+            // menuLoadGame
             // 
-            this.загрузитьБойИзФайлаToolStripMenuItem.Name = "загрузитьБойИзФайлаToolStripMenuItem";
-            this.загрузитьБойИзФайлаToolStripMenuItem.Size = new System.Drawing.Size(150, 20);
-            this.загрузитьБойИзФайлаToolStripMenuItem.Text = "Загрузить бой из файла";
-            this.загрузитьБойИзФайлаToolStripMenuItem.Click += new System.EventHandler(this.загрузитьБойИзФайлаToolStripMenuItem_Click);
+            this.menuLoadGame.Name = "menuLoadGame";
+            this.menuLoadGame.Size = new System.Drawing.Size(150, 20);
+            this.menuLoadGame.Text = "Загрузить бой из файла";
+            this.menuLoadGame.Click += new System.EventHandler(this.загрузитьБойИзФайлаToolStripMenuItem_Click);
             // 
-            // сохранитьБойВФайлToolStripMenuItem
+            // menuSaveGame
             // 
-            this.сохранитьБойВФайлToolStripMenuItem.Name = "сохранитьБойВФайлToolStripMenuItem";
-            this.сохранитьБойВФайлToolStripMenuItem.Size = new System.Drawing.Size(142, 20);
-            this.сохранитьБойВФайлToolStripMenuItem.Text = "Сохранить бой в файл";
-            this.сохранитьБойВФайлToolStripMenuItem.Click += new System.EventHandler(this.сохранитьБойВФайлToolStripMenuItem_Click);
-            // 
-            // saveFileDialogSaveBattle
-            // 
-            this.saveFileDialogSaveBattle.FileName = "battle.btl";
-            this.saveFileDialogSaveBattle.Filter = "Битва|*btl*";
-            // 
-            // openFileDialogOpenBattle
-            // 
-            this.openFileDialogOpenBattle.Filter = "Битва|*btl*";
+            this.menuSaveGame.Name = "menuSaveGame";
+            this.menuSaveGame.Size = new System.Drawing.Size(142, 20);
+            this.menuSaveGame.Text = "Сохранить бой в файл";
+            this.menuSaveGame.Click += new System.EventHandler(this.сохранитьБойВФайлToolStripMenuItem_Click);
             // 
             // FormView
             // 
@@ -357,11 +346,9 @@
         private System.Windows.Forms.Label labelHPLeftFighter;
         private System.Windows.Forms.Label labelHPRightFighter;
         private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem новаяИграToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem загрузитьБойИзФайлаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сохранитьБойВФайлToolStripMenuItem;
-        private System.Windows.Forms.SaveFileDialog saveFileDialogSaveBattle;
-        private System.Windows.Forms.OpenFileDialog openFileDialogOpenBattle;
+        private System.Windows.Forms.ToolStripMenuItem menuNewGame;
+        private System.Windows.Forms.ToolStripMenuItem menuLoadGame;
+        private System.Windows.Forms.ToolStripMenuItem menuSaveGame;
         private System.Windows.Forms.Label labelRoundCount;
     }
 }

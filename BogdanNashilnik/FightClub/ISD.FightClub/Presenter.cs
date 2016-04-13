@@ -3,6 +3,8 @@ using FightClubLogic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ISD.FightClub
 {
@@ -103,7 +105,44 @@ namespace ISD.FightClub
             this.battle.Action(bodyPart);
             this.NotifyPropertyChanged();
         }
-        
+
+        public void Save()
+        {
+            var saveFileDialogSaveBattle = new SaveFileDialog();
+            saveFileDialogSaveBattle.FileName = "battle.btl";
+            saveFileDialogSaveBattle.Filter = "Битва|*btl*";
+            saveFileDialogSaveBattle.ShowDialog();
+            if (saveFileDialogSaveBattle.FileName != "")
+            {
+                using (FileStream fs = (System.IO.FileStream)saveFileDialogSaveBattle.OpenFile())
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    bf.Serialize(fs, this);
+                }
+            }
+        }
+        public void Load()
+        {
+            var openFileDialogLoadBattle = new OpenFileDialog();
+            openFileDialogLoadBattle.Filter = "Битва|*btl*";
+            if (openFileDialogLoadBattle.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                using (FileStream fs = (System.IO.FileStream)openFileDialogLoadBattle.OpenFile())
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    try
+                    {
+                        IPresenter loadedPresenter = (IPresenter)bf.Deserialize(fs);
+                        this.LoadBattle(loadedPresenter);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Невозможно загрузить бой.");
+                    }
+                }
+            }
+        }
+
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
             if (PropertyChanged != null)

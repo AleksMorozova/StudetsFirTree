@@ -9,5 +9,7 @@ namespace ISD.FightClub
         void Action(BodyPart bodyPart);
         void LoadBattle(IPresenter presenter);
         void ResetBattle(Fighter fighter1, Fighter fighter2);
+        void Save();
+        void Load();
     }
 }

@@ -11,3 +11,16 @@ C:\Users\Bogdan\Desktop\StudentsFightClub-nashilnik\BogdanNashilnik\FightClub\IS
 C:\Users\Bogdan\Desktop\StudentsFightClub-nashilnik\BogdanNashilnik\FightClub\ISD.FightClub\obj\Debug\ISD.FightClub.csproj.GenerateResource.Cache
 C:\Users\Bogdan\Desktop\StudentsFightClub-nashilnik\BogdanNashilnik\FightClub\ISD.FightClub\obj\Debug\ISD.FightClub.exe
 C:\Users\Bogdan\Desktop\StudentsFightClub-nashilnik\BogdanNashilnik\FightClub\ISD.FightClub\obj\Debug\ISD.FightClub.pdb
+C:\Users\Bogdan\Source\Repos\StudetsFirTree\BogdanNashilnik\FightClub\ISD.FightClub\bin\Debug\ISD.FightClub.exe.config
+C:\Users\Bogdan\Source\Repos\StudetsFirTree\BogdanNashilnik\FightClub\ISD.FightClub\obj\Debug\ISD.FightClub.exe
+C:\Users\Bogdan\Source\Repos\StudetsFirTree\BogdanNashilnik\FightClub\ISD.FightClub\obj\Debug\ISD.FightClub.pdb
+C:\Users\Bogdan\Source\Repos\StudetsFirTree\BogdanNashilnik\FightClub\ISD.FightClub\bin\Debug\ISD.FightClub.exe
+C:\Users\Bogdan\Source\Repos\StudetsFirTree\BogdanNashilnik\FightClub\ISD.FightClub\bin\Debug\ISD.FightClub.pdb
+C:\Users\Bogdan\Source\Repos\StudetsFirTree\BogdanNashilnik\FightClub\ISD.FightClub\bin\Debug\FightClubLogic.dll
+C:\Users\Bogdan\Source\Repos\StudetsFirTree\BogdanNashilnik\FightClub\ISD.FightClub\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Bogdan\Source\Repos\StudetsFirTree\BogdanNashilnik\FightClub\ISD.FightClub\bin\Debug\FightClubLogic.pdb
+C:\Users\Bogdan\Source\Repos\StudetsFirTree\BogdanNashilnik\FightClub\ISD.FightClub\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Bogdan\Source\Repos\StudetsFirTree\BogdanNashilnik\FightClub\ISD.FightClub\obj\Debug\ISD.FightClub.csprojResolveAssemblyReference.cache
+C:\Users\Bogdan\Source\Repos\StudetsFirTree\BogdanNashilnik\FightClub\ISD.FightClub\obj\Debug\ISD.FightClub.FormView.resources
+C:\Users\Bogdan\Source\Repos\StudetsFirTree\BogdanNashilnik\FightClub\ISD.FightClub\obj\Debug\ISD.FightClub.Properties.Resources.resources
+C:\Users\Bogdan\Source\Repos\StudetsFirTree\BogdanNashilnik\FightClub\ISD.FightClub\obj\Debug\ISD.FightClub.csproj.GenerateResource.Cache
