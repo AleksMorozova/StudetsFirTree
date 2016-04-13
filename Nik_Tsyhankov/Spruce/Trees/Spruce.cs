@@ -1,45 +1,46 @@
 ﻿using Spruce.Props;
+using Spruce.Trees;
 using System;
 
 namespace Spruce
 {
-    public class Spruce : Plant, IPersistent
+    public class Spruce : IPlant, IPersistent
     {
         private const Colors _color = Colors.Green;
         private const Appearances _appearance = Appearances.Slim;
-        private int _age;
-        public override Colors Color
+        private int _hight;
+        public Colors Color
         {
             get
             {
                 return _color;
             }
         }
-        public override Appearances Appearance
+        public Appearances Appearance
         {
             get
             {
                 return _appearance;
             }
         }
-        new public int Age
+        public int Hight
         {
             get
             {
-                return _age;
+                return _hight;
             }
             private set
             {
-                _age += value;
+                _hight = value;
             }
         }
 
         public Spruce()
         {
-            _age = 0;
-            ToSprout();
-            Year.SeasonChanged += new EventHandler<YearsEventArgs>(SeasonChanged);
-            Year.YearChanged += new EventHandler<YearsEventArgs>(Grow);
+            Hight = 0;
+            Year.SeasonChanged += SeasonChanged;
+            Year.MonthChanged += Grow;
+            Console.WriteLine("I was born!");
         }
 
         public void IgnoreSeason(Seasons _season)
@@ -47,14 +48,13 @@ namespace Spruce
             Console.WriteLine("{0} came, but i still {1} and {2}", 
                 _season, Appearance, Color);
         }
-        public override void Grow(object sender, YearsEventArgs e)
+        public void Grow(object sender, YearsEventArgs e)
         {
             Console.WriteLine("Growing...");
-            Age = 1;
-            Console.WriteLine("Going {0} year.", e.CurrentYear);
-            Console.WriteLine("Current age: {0}", Age);
+            Hight += 10;
+            Console.WriteLine("Current hight: {0} sm.", Hight);
         }
-        public override void SeasonChanged(object sender, YearsEventArgs e)
+        public void SeasonChanged(object sender, YearsEventArgs e)
         {
             IgnoreSeason(e.CurrentSeason);
         }

@@ -2,6 +2,7 @@
 {
     public enum Colors
     {
+        None,
         Green,
         Yellow,
         Orange,

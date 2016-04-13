@@ -3,7 +3,6 @@
     public class YearsEventArgs
     {
         private Seasons _season;
-        private int _year;
         public Seasons CurrentSeason
         {
             get
@@ -15,22 +14,9 @@
                 _season = value;
             }
         }
-        public int CurrentYear
+        public YearsEventArgs(Seasons _season)
         {
-            get
-            {
-                return _year;
-            }
-            private set
-            {
-                _year = value;
-            }
-        }
-        public YearsEventArgs(Seasons _season, int _year)
-        {
-            this._year = _year;
             CurrentSeason = _season;
-
         }
     }
 }
