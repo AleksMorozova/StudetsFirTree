@@ -55,37 +55,7 @@ namespace ISD.FightClub
             MessageBox.Show("Победил " + winnerName + "!");
             Application.Exit();
         }
-        private void SavePresenter()
-        {
-            saveFileDialogSaveBattle.ShowDialog();
-            if (saveFileDialogSaveBattle.FileName != "")
-            {
-                using (FileStream fs = (System.IO.FileStream)saveFileDialogSaveBattle.OpenFile())
-                {
-                    BinaryFormatter bf = new BinaryFormatter();
-                    bf.Serialize(fs, presenter);
-                }
-            }
-        }
-        private void LoadPresenter()
-        {
-            if (openFileDialogOpenBattle.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                using (FileStream fs = (System.IO.FileStream)openFileDialogOpenBattle.OpenFile())
-                {
-                    BinaryFormatter bf = new BinaryFormatter();
-                    try
-                    {
-                        IPresenter loadedPresenter = (IPresenter)bf.Deserialize(fs);
-                        presenter.LoadBattle(loadedPresenter);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Невозможно загрузить бой.");
-                    }
-                }
-            }
-        }
+        
         private void TrySetImage(PictureBox pb, string imagePath)
         {
             try
@@ -127,11 +97,11 @@ namespace ISD.FightClub
         }
         private void сохранитьБойВФайлToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SavePresenter();
+            presenter.Save();
         }
         private void загрузитьБойИзФайлаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LoadPresenter();
+            presenter.Load();
         }
 
     }

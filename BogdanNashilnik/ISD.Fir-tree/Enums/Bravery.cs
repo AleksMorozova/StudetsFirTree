@@ -1,4 +1,4 @@
-﻿enum Bravery
+﻿public enum Bravery
 {
     Brave,
     Coward,

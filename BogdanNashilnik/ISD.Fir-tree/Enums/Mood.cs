@@ -1,4 +1,4 @@
-﻿enum Mood
+﻿public enum Mood
 {
     Angry,
     Happy,

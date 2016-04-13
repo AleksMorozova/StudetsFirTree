@@ -10,7 +10,7 @@ namespace FightClubLogic.Tests
         public void BattleTest()
         {
             Fighter f1 = new Fighter("123", 15, 5);
-            CPUFighter f2 = new CPUFighter("abc", 25, 10);
+            Fighter f2 = new Fighter("abc", 25, 10);
             Battle battle = new Battle(f1, f2);
 
             Assert.AreEqual(f1, battle.Fighter1);
@@ -28,7 +28,7 @@ namespace FightClubLogic.Tests
             do
             {
                 Fighter f1 = new Fighter("123", 15, 5);
-                CPUFighter f2 = new CPUFighter("123", 15, 5);
+                Fighter f2 = new Fighter("123", 15, 5);
                 Battle battle = new Battle(f1, f2);
                 battle.Action(BodyPart.Head);
                 if (battle.Fighter2.Blocked == BodyPart.Head)
@@ -52,7 +52,7 @@ namespace FightClubLogic.Tests
         public void BattleCanEnd()
         {
             Fighter f1 = new Fighter("123", 15, 5);
-            CPUFighter f2 = new CPUFighter("123", 15, 5);
+            Fighter f2 = new Fighter("123", 15, 5);
             Battle battle = new Battle(f1, f2);
 
             bool eventRecieved = false;

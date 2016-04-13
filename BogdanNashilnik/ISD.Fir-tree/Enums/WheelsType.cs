@@ -1,4 +1,4 @@
-﻿enum WheelsType
+﻿public enum WheelsType
 {
     Runners,
     Whhels

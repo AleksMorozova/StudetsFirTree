@@ -4,7 +4,7 @@ namespace ISD.FightClub
 {
     abstract class Creator
     {
-        public abstract CPUFighter CreateCPUFighter();
+        public abstract Fighter CreateCPUFighter();
         public abstract Fighter CreateFighter();
         public static Fighter CreateFighter(string name, int maxHP, int damage)
         {

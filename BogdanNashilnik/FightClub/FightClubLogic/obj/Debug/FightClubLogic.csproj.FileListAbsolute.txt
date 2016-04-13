@@ -3,3 +3,8 @@ C:\Users\Bogdan\Desktop\StudentsFightClub-nashilnik\BogdanNashilnik\FightClub\Fi
 C:\Users\Bogdan\Desktop\StudentsFightClub-nashilnik\BogdanNashilnik\FightClub\FightClubLogic\obj\Debug\FightClubLogic.csprojResolveAssemblyReference.cache
 C:\Users\Bogdan\Desktop\StudentsFightClub-nashilnik\BogdanNashilnik\FightClub\FightClubLogic\obj\Debug\FightClubLogic.dll
 C:\Users\Bogdan\Desktop\StudentsFightClub-nashilnik\BogdanNashilnik\FightClub\FightClubLogic\obj\Debug\FightClubLogic.pdb
+C:\Users\Bogdan\Source\Repos\StudetsFirTree\BogdanNashilnik\FightClub\FightClubLogic\bin\Debug\FightClubLogic.dll
+C:\Users\Bogdan\Source\Repos\StudetsFirTree\BogdanNashilnik\FightClub\FightClubLogic\bin\Debug\FightClubLogic.pdb
+C:\Users\Bogdan\Source\Repos\StudetsFirTree\BogdanNashilnik\FightClub\FightClubLogic\obj\Debug\FightClubLogic.csprojResolveAssemblyReference.cache
+C:\Users\Bogdan\Source\Repos\StudetsFirTree\BogdanNashilnik\FightClub\FightClubLogic\obj\Debug\FightClubLogic.dll
+C:\Users\Bogdan\Source\Repos\StudetsFirTree\BogdanNashilnik\FightClub\FightClubLogic\obj\Debug\FightClubLogic.pdb

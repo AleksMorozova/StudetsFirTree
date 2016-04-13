@@ -4,9 +4,9 @@ namespace ISD.FightClub
 {
     class MortalCombatCreator : Creator
     {
-        public override CPUFighter CreateCPUFighter()
+        public override Fighter CreateCPUFighter()
         {
-            return new CPUFighter("Noob Saibot", 30, 5, "resources/noobsaibot.png");
+            return new Fighter("Noob Saibot", 30, 5, "resources/noobsaibot.png");
         }
         public override Fighter CreateFighter()
         {

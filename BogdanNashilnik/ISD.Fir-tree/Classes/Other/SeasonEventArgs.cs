@@ -2,7 +2,7 @@
 
 namespace ISD.Fir_tree.Classes
 {
-    class SeasonEventArgs : EventArgs
+    public class SeasonEventArgs : EventArgs
     {
         public Season Season { get; private set; }
 

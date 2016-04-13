@@ -1,4 +1,4 @@
-﻿enum Wooliness
+﻿public enum Wooliness
 {
     Bold,
     Medium,

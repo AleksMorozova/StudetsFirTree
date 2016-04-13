@@ -2,7 +2,7 @@
 
 namespace ISD.Fir_tree.Classes
 {
-    static class Year
+    static public class Year
     {
         private static Season currentSeason = Season.Winter;
         public delegate void SeasonChanged(object sender, EventArgs e);

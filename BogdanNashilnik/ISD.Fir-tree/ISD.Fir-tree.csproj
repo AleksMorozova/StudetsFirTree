@@ -51,14 +51,14 @@
     <Compile Include="Classes\Other\Year.cs" />
     <Compile Include="Classes\Other\ChristmasParty.cs" />
     <Compile Include="Classes\Other\ChristmasTreeToy.cs" />
-    <Compile Include="Classes\Human\Kid.cs" />
+    <Compile Include="Classes\People\Kid.cs" />
     <Compile Include="Classes\Other\Party.cs" />
     <Compile Include="Classes\Other\SeasonEventArgs.cs" />
     <Compile Include="Classes\Tree\FelledFir.cs" />
     <Compile Include="Classes\Tree\FelledTree.cs" />
     <Compile Include="Classes\Nature\Snow.cs" />
-    <Compile Include="Classes\Human\OldMan.cs" />
-    <Compile Include="Classes\Human\Person.cs" />
+    <Compile Include="Classes\People\OldMan.cs" />
+    <Compile Include="Classes\People\Person.cs" />
     <Compile Include="Classes\Other\Song.cs" />
     <Compile Include="Classes\Animals\Wolf.cs" />
     <Compile Include="Classes\Other\WoodSledge.cs" />

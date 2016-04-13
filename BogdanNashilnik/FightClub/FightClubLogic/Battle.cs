@@ -50,17 +50,22 @@ namespace FightClubLogic
         {
             if (this.roundHalf == RoundHalf.HumanAttack)
             {
-                (this.cpuFighter as CPUFighter).SetBlock();
+                cpuFighter.SetBlock(GenerateBodyPart());
                 this.cpuFighter.GetHit(bodyPart, humanFighter.Damage);
                 this.roundHalf = RoundHalf.CPUAttack;
             }
             else
             {
                 this.humanFighter.SetBlock(bodyPart);
-                this.humanFighter.GetHit((this.cpuFighter as CPUFighter).GenerateBodyPart(), cpuFighter.Damage);
+                this.humanFighter.GetHit(GenerateBodyPart(), cpuFighter.Damage);
                 this.roundHalf = RoundHalf.HumanAttack;
                 this.round++;
             }
+        }
+        private BodyPart GenerateBodyPart()
+        {
+            int totalBodyParts = Enum.GetValues(typeof(BodyPart)).Length;
+            return (BodyPart)rng.Next(0, totalBodyParts);
         }
     }
 }
