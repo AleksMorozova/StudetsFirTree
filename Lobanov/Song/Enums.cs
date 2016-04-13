@@ -23,4 +23,11 @@ namespace Song
         Yellow,
         Brown
     }
+
+    enum Character
+    {
+        Angry,
+        Coward,
+        None
+    }
 }

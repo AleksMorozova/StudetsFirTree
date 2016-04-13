@@ -8,7 +8,6 @@ namespace Song
     class WoodSledge
     {
         public Man peasant;
-        
         public Runners runners = new Runners();
 
         public bool IsControlled()

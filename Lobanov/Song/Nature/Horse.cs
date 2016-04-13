@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Song
 {
-    class Horse:Animal, IHairy
+    class Horse:Animal
     {
         public WoodSledge sledge;
         public override void Move()

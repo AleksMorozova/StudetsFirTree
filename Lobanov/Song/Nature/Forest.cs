@@ -7,38 +7,28 @@ namespace Song
 {
     class Forest
     {
-        public List<Fir> firs = new List<Fir>();
+        public List<Tree> Trees{get;private set;}
+        public List<Animal> Chars { get; private set; } 
+
         public Forest()
         {
-
-            CreateTree();
+            Trees = new List<Tree>();
+            Chars = new List<Animal>();
         }
-        public void CreateTree()
+        public void AddTree(Tree input)
         {
-            Console.Write("В лесу ");
-            firs.Add(new Fir());
+            Trees.Add(input);
+        }
+        public void AddAnimal(Animal input)
+        {
+            Chars.Add(input);
         }
         public void SeasonChanges()
         {
-            Console.Write("В лесу ");
-            for (int i = 0; i < firs.Count; i++)
+            for (int i = 0; i < Trees.Count; i++)
             {
-                firs[i].Grow();
+                Trees[i].Grow();
             }
-
-            Console.Write("Зимой и летом ");
-            for (int i = 0; i < firs.Count; i++)
-            {
-                if (firs[i].IsSlim(Seasons.Summer).Equals(firs[i].IsSlim(Seasons.Winter)))
-                {
-                    Console.WriteLine("стройная,");
-                }
-                if (firs[i].GetColor(Seasons.Summer).Equals(firs[i].GetColor(Seasons.Winter)))
-                {
-                    Console.WriteLine("Зелёная была");
-                }
-            }
-            
         }
     }
 }
