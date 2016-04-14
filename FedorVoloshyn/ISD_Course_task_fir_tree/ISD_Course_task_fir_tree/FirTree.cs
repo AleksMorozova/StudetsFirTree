@@ -15,8 +15,6 @@ namespace ISD_Course_task_fir_tree
         public FirTree(string name, string growBorn)
         {
             this.name = name;
-            Console.WriteLine("В {0} родилась елочка", growBorn);
-            Year.SeasonChanged += SeasonChangedReaction;
         }
         public void Grow(string growPlace) { Console.WriteLine("В {0} она росла", growPlace); }
         public void SeasonChangedReaction(Seasons currentSeason) { }

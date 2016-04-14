@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace ISD_Course_task_fir_tree
 {
     public delegate void SeasonChangedHandler(Seasons season);
-    static class Year
+    class Year
     {
-        static private Seasons season = Seasons.Winter;
-        static public Seasons Season { get { return season; } }
+        private Seasons season = Seasons.Winter;
+        public Seasons Season { get { return season; } }
 
-        static public event SeasonChangedHandler SeasonChanged;
-        static public void NextSeason()
+        public event SeasonChangedHandler SeasonChanged;
+        public void NextSeason()
         {
             if (season == Seasons.Winter)
                 season = Seasons.Summer;
