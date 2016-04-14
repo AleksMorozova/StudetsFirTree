@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ISD.Fir_tree.Classes;
-using static ISD.Fir_tree.Classes.Year;
 
 namespace Tests
 {
@@ -9,12 +8,13 @@ namespace Tests
     {
         Fir fir = new Fir();
         Oak oak = new Oak();
-        Forest forest = new Forest();
+        Year year = new Year();
+        Forest forest;
 
         [TestInitialize]
         public void Init()
         {
-            Year.OnSeasonChanged += new SeasonChanged((sender, e) => forest.ChangeSeason(((SeasonEventArgs)e).Season));
+            forest = new Forest(year);
             forest.Plant(fir);
             forest.Plant(oak);
         }
@@ -41,17 +41,17 @@ namespace Tests
         [TestMethod]
         public void SeasonChangeTest()
         {
-            Assert.AreEqual(Year.CurrentSeason, Season.Winter);
+            Assert.AreEqual(year.CurrentSeason, Season.Winter);
 
             Assert.AreEqual(fir.Color, Color.Green);
             Assert.AreEqual(fir.Constitution, TreeConstitution.Slim);
             Assert.AreEqual(oak.Color, Color.None);
             Assert.AreEqual(oak.Constitution, TreeConstitution.Fat);
 
-            Year.ChangeSeason();
-            Year.ChangeSeason();
+            year.NextSeason();
+            year.NextSeason();
 
-            Assert.AreEqual(Year.CurrentSeason, Season.Summer);
+            Assert.AreEqual(year.CurrentSeason, Season.Summer);
 
             Assert.AreEqual(fir.Color, Color.Green);
             Assert.AreEqual(fir.Constitution, TreeConstitution.Slim);

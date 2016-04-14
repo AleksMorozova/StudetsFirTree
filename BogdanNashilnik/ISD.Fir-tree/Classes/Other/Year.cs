@@ -2,13 +2,13 @@
 
 namespace ISD.Fir_tree.Classes
 {
-    static public class Year
+    public class Year
     {
-        private static Season currentSeason = Season.Winter;
+        private Season currentSeason = Season.Winter;
         public delegate void SeasonChanged(object sender, EventArgs e);
-        static public event SeasonChanged OnSeasonChanged;
+        public event SeasonChanged OnSeasonChanged;
 
-        public static Season CurrentSeason
+        public Season CurrentSeason
         {
             get
             {
@@ -16,7 +16,7 @@ namespace ISD.Fir_tree.Classes
             }
         }
 
-        public static void ChangeSeason()
+        public void NextSeason()
         {
             if ((int)currentSeason >= 3)
             {

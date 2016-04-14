@@ -73,20 +73,12 @@ namespace ISD.Fir_tree.Classes
                 wrappedWithSnow = value;
             }
         }
-        public Animal Animal
+        
+        public void PutAnimal(Animal animal)
         {
-            get
-            {
-                return animal;
-            }
-
-            set
-            {
-                Console.WriteLine("Теперь под деревом \"{0}\" находится животное \"{1}\".", this.name, value.Name);
-                animal = value;
-            }
+            this.animal = animal;
+            Console.WriteLine("Теперь под деревом \"{0}\" находится животное \"{1}\".", this.name, animal.Name);
         }
-
         public abstract void ChangeSeason(Season season);
     }
 }

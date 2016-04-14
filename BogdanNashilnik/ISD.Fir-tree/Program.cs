@@ -10,8 +10,8 @@ namespace ISD.Fir_tree
         static void Main(string[] args)
         {
             // В лесу
-            var forest = new Forest();
-            Year.OnSeasonChanged += new SeasonChanged((sender, e) => forest.ChangeSeason(((SeasonEventArgs)e).Season));
+            var year = new Year();
+            var forest = new Forest(year);
             // Родилась ёлочка
             var fir = new Fir("Ёлочка");
             forest.Plant(fir);
@@ -20,14 +20,14 @@ namespace ISD.Fir_tree
             var age = 5;
             forest.Grow(age);
             // Зимой
-            Console.WriteLine("Текущее время года: {0}.", Year.CurrentSeason);
+            Console.WriteLine("Текущее время года: {0}.", year.CurrentSeason);
             // Стройная, зелёная была
             Console.WriteLine(fir.Color);
             Console.WriteLine(fir.Constitution);
             // И летом
-            Year.ChangeSeason();
-            Year.ChangeSeason();
-            Console.WriteLine("Текущее время года: {0}.", Year.CurrentSeason);
+            year.NextSeason();
+            year.NextSeason();
+            Console.WriteLine("Текущее время года: {0}.", year.CurrentSeason);
             // Стройная, зелёная была
             Console.WriteLine(fir.Color);
             Console.WriteLine(fir.Constitution);
@@ -45,7 +45,7 @@ namespace ISD.Fir_tree
             Console.WriteLine(bunny.Bravery);
             Console.WriteLine(bunny.Color);
             // Под ёлочкой
-            fir.Animal = bunny;
+            fir.PutAnimal(bunny);
             // Скакал
             bunny.Move();
             // Порою волк
@@ -54,7 +54,7 @@ namespace ISD.Fir_tree
             wolf.Mood = Mood.Angry;
             Console.WriteLine(wolf.Mood);
             // Рысцою пробегал
-            fir.Animal = wolf;
+            fir.PutAnimal(wolf);
             wolf.Move();
             // Чу! Снег по лесу частому 
             // Под полозом скрипит, 
