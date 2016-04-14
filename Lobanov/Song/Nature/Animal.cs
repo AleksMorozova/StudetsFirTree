@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Song
 {
-    abstract class Animal
+   public abstract class Animal
     {
         public virtual Character GetAnimalCharacter()
         {

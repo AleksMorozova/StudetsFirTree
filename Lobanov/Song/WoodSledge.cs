@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Song
 {
-    class WoodSledge
+    public class WoodSledge
     {
         public Man peasant;
         public Runners runners = new Runners();

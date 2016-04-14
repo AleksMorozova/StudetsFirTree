@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Song
 {
-    interface IColoured
+     interface IColoured
     {
         Colors GetColor(Seasons season);
     }

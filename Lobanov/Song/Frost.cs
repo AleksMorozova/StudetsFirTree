@@ -5,11 +5,10 @@ using System.Text;
 
 namespace Song
 {
-    class Frost
+    internal class Frost
     {
         public void Freeze(Fir fir)
         {
-
             fir.Wrapped = true;
             fir.Freeze();
         }

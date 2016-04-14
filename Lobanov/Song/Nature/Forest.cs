@@ -5,16 +5,27 @@ using System.Text;
 
 namespace Song
 {
-    class Forest
+    public class Forest
     {
         public List<Tree> Trees{get;private set;}
         public List<Animal> Chars { get; private set; } 
 
-        public Forest()
+        public Forest(ISeasonProvider year)
         {
+            year.OnSeasonChanged += YearChangedSeason;
             Trees = new List<Tree>();
             Chars = new List<Animal>();
+            
         }
+
+        private void YearChangedSeason(object sender, SeasonEventArgs e)
+        {
+            for (int i = 0; i < Trees.Count; i++)
+            {
+                Trees[i].SeasonHandler(e);
+            }
+        }
+
         public void AddTree(Tree input)
         {
             Trees.Add(input);
@@ -23,12 +34,8 @@ namespace Song
         {
             Chars.Add(input);
         }
-        public void SeasonChanges()
-        {
-            for (int i = 0; i < Trees.Count; i++)
-            {
-                Trees[i].Grow();
-            }
-        }
+        
+            
+        
     }
 }

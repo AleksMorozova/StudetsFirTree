@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Song
 {
-    class Oak: Tree
+    public class Oak: Tree
     {
         public Oak()
         {

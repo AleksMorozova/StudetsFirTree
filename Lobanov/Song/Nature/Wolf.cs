@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Song
 {
-    class Wolf:Animal
+    public class Wolf:Animal
     {
         public override Character GetAnimalCharacter()
         {

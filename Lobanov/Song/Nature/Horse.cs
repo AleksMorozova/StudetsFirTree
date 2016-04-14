@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Song
 {
-    class Horse:Animal
+   public class Horse:Animal
     {
         public WoodSledge sledge;
         public override void Move()
@@ -15,6 +15,10 @@ namespace Song
             {
                 Console.WriteLine(" Везет лошадка дровенки");
             }
+        }
+        public override bool IsHairy()
+        {
+            return true;
         }
 
     }

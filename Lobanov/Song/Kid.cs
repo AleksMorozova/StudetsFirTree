@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Song
 {
-    class Kid
+    public class Kid
     {
         public bool IsHappy{get;set;}
     }
