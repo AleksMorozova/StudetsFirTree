@@ -38,23 +38,24 @@ namespace Spruce
         public Spruce()
         {
             Hight = 0;
-            Year.SeasonChanged += SeasonChanged;
-            Year.MonthChanged += Grow;
+            Console.WriteLine("Spruce:");
             Console.WriteLine("I was born!");
         }
 
         public void IgnoreSeason(Seasons _season)
         {
+            Console.WriteLine("Spruce:");
             Console.WriteLine("{0} came, but i still {1} and {2}", 
                 _season, Appearance, Color);
         }
-        public void Grow(object sender, YearsEventArgs e)
+        public void Grow()
         {
+            Console.WriteLine("Spruce:");
             Console.WriteLine("Growing...");
             Hight += 10;
             Console.WriteLine("Current hight: {0} sm.", Hight);
         }
-        public void SeasonChanged(object sender, YearsEventArgs e)
+        public void SeasonChanged(YearsEventArgs e)
         {
             IgnoreSeason(e.CurrentSeason);
         }

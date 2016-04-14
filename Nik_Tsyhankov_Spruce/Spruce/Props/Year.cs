@@ -2,11 +2,11 @@
 
 namespace Spruce.Props
 {
-    public static class Year
+    public class Year: ISeasonChanger
     {
-        private static int _currentMonth;
-        private static Seasons _currentSeason;
-        public static Seasons CurrentSeason
+        private int _currentMonth;
+        private Seasons _currentSeason;
+        public Seasons CurrentSeason
         {
             get
             {
@@ -17,7 +17,7 @@ namespace Spruce.Props
                 _currentSeason = value;
             }
         }
-        public static int CurrentMonth
+        public int CurrentMonth
         {
             get
             {
@@ -30,19 +30,19 @@ namespace Spruce.Props
                 else
                     _currentMonth = value;
                 if (MonthChanged != null)
-                    MonthChanged(null, new YearsEventArgs(CurrentSeason));
+                    MonthChanged(new YearsEventArgs(CurrentSeason));
             }
         }
-        public static event EventHandler<YearsEventArgs> SeasonChanged;
-        public static event EventHandler<YearsEventArgs> MonthChanged;
+        public event SeasonHandler SeasonChanged;
+        public event SeasonHandler MonthChanged;
 
-        static Year()
+        public Year()
         {
             CurrentMonth = 1;
             CurrentSeason = Seasons.Winter;
         }
 
-        public static void ChangeMonth()
+        public void ChangeMonth()
         {
             CurrentMonth += 1;
 
@@ -58,7 +58,7 @@ namespace Spruce.Props
             if (CurrentMonth == 3 || CurrentMonth == 6 || CurrentMonth == 9 || CurrentMonth == 12)
             {
                 if (SeasonChanged != null)
-                    SeasonChanged(null, new YearsEventArgs(CurrentSeason));
+                    SeasonChanged(new YearsEventArgs(CurrentSeason));
             }
         }
     }
