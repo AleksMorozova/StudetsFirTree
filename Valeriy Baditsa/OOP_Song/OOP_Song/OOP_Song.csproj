@@ -48,9 +48,9 @@
     <Compile Include="Maple.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sezon.cs" />
-    <Compile Include="SezonEventArgs.cs" />
-    <Compile Include="Wildlife.cs" />
+    <Compile Include="Season.cs" />
+    <Compile Include="SeasonEventArgs.cs" />
+    <Compile Include="IWildlife.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

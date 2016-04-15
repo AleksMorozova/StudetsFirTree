@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OOP_Song
 {
-    class Maple : ITree
+    public class Maple : ITree
     {
         public string Name { get; set; }
         public Colors color { get; set; }
@@ -28,23 +24,23 @@ namespace OOP_Song
             Console.WriteLine("{0} is GROWING", this.Name);
         }
 
-        public void reactionsTreesOn_SezonChanged(object sender, SezonEventArgs e)
+        public void reactionTreeOn_SezonChanged(SeasonEventArgs e)
         {
             switch (e.CurrentSezon)
             {
-                case Sezons.autumn:
+                case Seasons.autumn:
                     this.color = Colors.orange;
                     this.Figure = Figures.slender;
                     break;
-                case Sezons.winter:
+                case Seasons.winter:
                     this.color = Colors.no_color;
                     this.Figure = Figures.slender;
                     break;
-                case Sezons.spring:
+                case Seasons.spring:
                     this.color = Colors.green;
                     this.Figure = Figures.standed;
                     break;
-                case Sezons.summer:
+                case Seasons.summer:
                     this.color = Colors.green;
                     this.Figure = Figures.standed;
                     break;
