@@ -1,4 +1,5 @@
 ﻿using Spruce.Props;
+using Spruce.Trees;
 using System;
 
 namespace Spruce
@@ -7,13 +8,15 @@ namespace Spruce
     {
         static void Main(string[] args)
         {
-            Forest _forest = new Forest();
+            ISeasonChanger _year = new Year();
+            Forest _forest = new Forest(_year);
 
             _forest.AddTree(new Spruce());
+            _forest.AddTree(new Oak());
 
-            for(int i = 0; i < 12; i++)
+            for (int i = 0; i < 12; i++)
             {
-                Year.ChangeMonth();
+                _year.ChangeMonth();
             }
 
             Console.ReadKey();

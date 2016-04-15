@@ -47,17 +47,17 @@ namespace Spruce.Trees
             Hight = 0;
             Appearance = Appearances.Skinny;
             Color = Colors.None;
-            Year.SeasonChanged += SeasonChanged;
-            Year.MonthChanged += Grow;
+            Console.WriteLine("Oak:");
             Console.WriteLine("I was born!");
         }
-        public void Grow(object sender, YearsEventArgs e)
+        public void Grow()
         {
+            Console.WriteLine("Oak:");
             Console.WriteLine("Growing...");
             Hight += 10;
             Console.WriteLine("Current hight: {0} sm.", Hight);
         }
-        public void SeasonChanged(object sender, YearsEventArgs e)
+        public void SeasonChanged(YearsEventArgs e)
         {
             if (e.CurrentSeason == Seasons.Autumn)
             {
@@ -80,6 +80,7 @@ namespace Spruce.Trees
                 Appearance = Appearances.Еhriving;
             }
 
+            Console.WriteLine("Oak:");
             Console.WriteLine("{0} came, i am {1} and {2}",
                 e.CurrentSeason, Appearance, Color);
         }

@@ -16,7 +16,7 @@ namespace Spruce.Trees
         {
             get;
         }
-        void SeasonChanged(object sender, YearsEventArgs e);
-        void Grow(object sender, YearsEventArgs e);
+        void SeasonChanged(YearsEventArgs e);
+        void Grow();
     }
 }

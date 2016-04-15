@@ -1,5 +1,6 @@
 ﻿namespace Spruce.Props
 {
+    public delegate void SeasonHandler(YearsEventArgs e);
     public class YearsEventArgs
     {
         private Seasons _season;
