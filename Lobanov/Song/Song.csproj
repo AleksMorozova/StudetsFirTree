@@ -45,6 +45,7 @@
     <Compile Include="Holiday.cs" />
     <Compile Include="Interfaces\IColoured.cs" />
     <Compile Include="Interfaces\ICuttable.cs" />
+    <Compile Include="Interfaces\ISeasonProvider.cs" />
     <Compile Include="Interfaces\ISlim.cs" />
     <Compile Include="Kid.cs" />
     <Compile Include="Nature\Animal.cs" />
@@ -57,11 +58,13 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Runners.cs" />
+    <Compile Include="SeasonEventArgs.cs" />
     <Compile Include="Snow.cs" />
     <Compile Include="Snowstorm.cs" />
     <Compile Include="Nature\Fir.cs" />
     <Compile Include="Nature\Wolf.cs" />
     <Compile Include="WoodSledge.cs" />
+    <Compile Include="Year.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

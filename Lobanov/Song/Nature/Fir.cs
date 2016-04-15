@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Song
 {
-    class Fir: Tree
+    public class Fir: Tree
     {
 
         
@@ -49,9 +49,8 @@ namespace Song
 
         public override void Grow()
         {
-            size++;
+            size+=2;
         }
-
 
         public void SetHappyness(IEnumerable<Kid> kids)
         {

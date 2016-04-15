@@ -44,6 +44,8 @@ namespace Song
 
         static void Main(string[] args)
         {
+            Year worldyear = new Year(Seasons.Summer);
+
             Snowstorm sStorm = new Snowstorm();
             var localfrost = new Frost();
 
@@ -66,7 +68,7 @@ namespace Song
             var snow = new Snow();
 
             //--------------------------------------
-            Forest myforest = new Forest();
+            Forest myforest = new Forest(worldyear);
             Fir myfir = new Fir();
 
             myforest.AddTree(myfir);
@@ -77,8 +79,10 @@ namespace Song
             myforest.AddTree(new Oak());
             myforest.AddAnimal(wolf);
             myforest.AddAnimal(hare);
-             
-            myforest.SeasonChanges();
+
+
+            worldyear.ChangeSeason();
+            worldyear.ChangeSeason();
             //В лесу она росла.
             if (myfir.IsSlim(Seasons.Summer) == myfir.IsSlim(Seasons.Winter))
             {

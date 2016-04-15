@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Song
 {
-    class Man
+   public class Man
     {
 
         public void CutTheTree(Fir aim, CutType type)

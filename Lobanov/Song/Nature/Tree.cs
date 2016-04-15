@@ -5,10 +5,12 @@ using System.Text;
 
 namespace Song
 {
-    class Tree : ICuttable, IColoured, ISlim
+    public class Tree : ICuttable, IColoured, ISlim
     {
         private bool cutted = false;
         protected int size = 1;
+
+       
 
         public bool Cutted
         {
@@ -36,11 +38,19 @@ namespace Song
         {
             return Colors.Brown;
         }
+        public int GetSize()
+        {
+            return size;
+        }
 
         public virtual void Grow()
         {
             size++;
         }
         
+        public virtual void SeasonHandler(SeasonEventArgs e)
+        {
+            Grow();
+        }
     }
 }

@@ -5,18 +5,18 @@ using System.Text;
 
 namespace Song
 {
-    enum Seasons
+   public enum Seasons
     {
         Winter,
         Summer
     }
-    enum CutType
+   public enum CutType
     {
         Fully,
         Half,
         Partially
     }
-    enum Colors
+   public enum Colors
     {
         Grey,
         Green,
@@ -24,7 +24,7 @@ namespace Song
         Brown
     }
 
-    enum Character
+   public enum Character
     {
         Angry,
         Coward,
