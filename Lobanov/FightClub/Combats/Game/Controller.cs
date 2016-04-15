@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -13,13 +14,21 @@ namespace Combats
 
     public enum Phase { First, Second }
 
-    public class Controller:ILoggable
+    public class Controller : ILoggable, INotifyPropertyChanged
     {
         
        private readonly Random random = new Random(DateTime.Now.Millisecond);
 
        public Player human {get;private set;}
        public Player comp {get;private set;}
+
+        public int humanHP{get{return human.HP;}}
+        public int compHP { get { return comp.HP; } }
+        public int humanPercentHP { get { return Convert.ToInt32(((Convert.ToDouble(human.HP) / Convert.ToDouble(human.MaxHP)) * 100)); } }
+        public int compPercentHP { get { return Convert.ToInt32(((Convert.ToDouble(comp.HP) / Convert.ToDouble(comp.MaxHP)) * 100)); } }
+
+
+       
 
 
        public string status { get; private set; }
@@ -107,6 +116,7 @@ namespace Combats
                Round++;
                
            }
+           OnPropertyChanged("something happened");
            
        }
         public void AddToLog(string append)
@@ -140,7 +150,14 @@ namespace Combats
             return part;
         }
 
-      
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
 
     }
 }
