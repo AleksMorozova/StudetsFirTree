@@ -24,12 +24,13 @@ namespace ISD.Fir_tree.Classes
             }
         }
 
-        public Forest(string name)
+        public Forest(string name, Year year)
         {
             this.name = name;
             this.trees = new List<Tree>();
+            year.OnSeasonChanged += new Year.SeasonChanged((sender, e) => this.ChangeSeason(((SeasonEventArgs)e).Season));
         }
-        public Forest() : this("Безымянный лес") { }
+        public Forest(Year year) : this("Безымянный лес", year) { }
 
         public void Plant(Tree tree)
         {
