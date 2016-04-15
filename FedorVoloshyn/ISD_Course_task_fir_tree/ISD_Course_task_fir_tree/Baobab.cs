@@ -16,8 +16,6 @@ namespace ISD_Course_task_fir_tree
         public Baobab(string name, string growBorn)
         {
             this.name = name;
-            Year.SeasonChanged += SeasonChangedReaction;
-            SeasonChangedReaction(Year.Season);
         }
         public void Grow(string growPlace) { }
 
