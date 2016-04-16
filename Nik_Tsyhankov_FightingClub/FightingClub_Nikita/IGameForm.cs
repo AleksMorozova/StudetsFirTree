@@ -14,13 +14,12 @@ namespace FightingClub_Nikita
         {
             set;
         }
-        bool Title
+        int Title
         {
             set;
         }
         int Rounds
         {
-            get;
             set;
         }
         string Log

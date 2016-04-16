@@ -106,16 +106,15 @@ namespace FightingClub_Nikita
             lblHPPlayer2.Text = player2.ToString();
             progressBarPlayer2.Value = player2;
         }
-        public bool Title
+        public int Title
         {
             set
             {
-                lblTitle.Text = (value) ? "Block!" : "Atack!";
+                lblTitle.Text = (value % 2 == 0) ? "Block!" : "Atack!";
             }
         }
         public int Rounds
         {
-            get { return Int32.Parse(lblRounds.Text); }
             set
             {
                 lblRounds.Text = value.ToString();

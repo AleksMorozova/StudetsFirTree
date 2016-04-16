@@ -111,7 +111,7 @@ namespace FightingClub_Nikita
             _view.HPPlayers(_process.Player1.HealthPoints,
                 _process.Player2.HealthPoints);
             _view.Rounds = _process.Round;
-            _view.Title = (_process.Round % 2 == 0) ? true : false;
+            _view.Title = _process.Round;
         }
     }
 }
