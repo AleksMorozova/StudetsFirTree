@@ -1,6 +1,6 @@
-﻿using GameProcess.BL.Fighters;
+﻿using GameProcess.BL;
+using GameProcess.BL.Fighters;
 using System;
-using System.Windows.Forms;
 
 namespace FightingClub_Nikita
 {
@@ -11,14 +11,6 @@ namespace FightingClub_Nikita
             get;
             set;
         }
-        string NameCPUPlayer
-        {
-            set;
-        }
-        int Title
-        {
-            set;
-        }
         int Rounds
         {
             set;
@@ -27,11 +19,11 @@ namespace FightingClub_Nikita
         {
             set;
         }
-        void HPPlayers(int player1, int player2);
         void BlockGame(string _winner);
         void UnblockGame();
         void ClearLog();
-        void Binding(BindingSource binding);
+        void Binding();
+        void SetBindingSource(IFighting process);
         event EventHandler<EventArgsBodyParts> ButHeadClick;
         event EventHandler<EventArgsBodyParts> ButBodyClick;
         event EventHandler<EventArgsBodyParts> ButLegClick;

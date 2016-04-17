@@ -1,6 +1,8 @@
 ﻿using GameProcess.BL.Fighters;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace GameProcess.BL
 {
@@ -10,6 +12,7 @@ namespace GameProcess.BL
         public IFighter Player1 { get; private set; }
         public IFighter Player2 { get; private set; }
         public int Round { get; private set; }
+        public string Status { get; private set; } = "Atack!";
         private static Random rnd;
         private List<string> _log = new List<string>();
         public List<string> Log
@@ -38,10 +41,17 @@ namespace GameProcess.BL
                 Player1.GetHit((BodyParts)rnd.Next(0, 4), ConstantFields.basicDamage);
             }
             Round++;
+            Status = (Round % 2 == 0) ? "Block!" : "Atack!";
+            NotifyPropertyChanged();
         }
         public void AddToLog(string item)
         {
             _log.Add(item);
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

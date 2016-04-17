@@ -1,9 +1,11 @@
 ﻿using GameProcess.BL.Fighters;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace GameProcess.BL
 {
-    public interface IFighting
+    public interface IFighting : INotifyPropertyChanged
     {
         IFighter Player1
         {
@@ -17,11 +19,16 @@ namespace GameProcess.BL
         {
             get;
         }
+        string Status
+        {
+            get;
+        }
         List<string> Log
         {
             get;
         }
         void MakeStep(BodyParts _part);
         void AddToLog(string item);
+        void NotifyPropertyChanged(String propertyName);
     }
 }
