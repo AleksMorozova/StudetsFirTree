@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.statusLabel = new System.Windows.Forms.Label();
             this.HeadButton = new System.Windows.Forms.Button();
             this.BodyButton = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             this.firstPlayerBar = new System.Windows.Forms.ProgressBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.logBox = new System.Windows.Forms.ListBox();
+            this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -52,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // statusLabel
@@ -120,6 +123,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(626, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // newGameToolStripMenuItem
             // 
@@ -247,6 +251,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,6 +275,7 @@
         private System.Windows.Forms.ProgressBar secondPlayerBar;
         private System.Windows.Forms.ProgressBar firstPlayerBar;
         private System.Windows.Forms.ListBox logBox;
+        private System.Windows.Forms.BindingSource gameBindingSource;
     }
 }
 
