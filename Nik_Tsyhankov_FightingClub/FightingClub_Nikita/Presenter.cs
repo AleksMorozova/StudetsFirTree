@@ -18,8 +18,11 @@ namespace FightingClub_Nikita
             this._process = _process;
             this._view = _view;
             this._manager = _manager;
+            BindingSource binding = new BindingSource();
+            binding.DataSource = _process;
+            _view.Binding(binding);
             _process.Player1.Name = _view.NamePlayer1;
-            _view.NameCPUPlayer = _process.Player2.Name;
+
             SuscribeForm();
             SuscribePlayer(_process.Player1);
             SuscribePlayer(_process.Player2);
@@ -108,10 +111,10 @@ namespace FightingClub_Nikita
         }
         private void UpdateStats()
         {
-            _view.HPPlayers(_process.Player1.HealthPoints,
-                _process.Player2.HealthPoints);
-            _view.Rounds = _process.Round;
-            _view.Title = _process.Round;
+            //_view.HPPlayers(_process.Player1.HealthPoints,
+            //    _process.Player2.HealthPoints);
+            //_view.Rounds = _process.Round;
+            //_view.Title = _process.Round;
         }
     }
 }

@@ -22,6 +22,16 @@ namespace FightingClub_Nikita
             NamePlayer1 = start.StartName;
         }
 
+        public void Binding(BindingSource binding)
+        {
+            lblPlayer2.DataBindings.Add("Text", binding, "Player2.Name");
+            //DataBindings.Add("Rounds", binding, "Round");
+            //DataBindings.Add("Title", binding, "Round");
+            lblHPPlayer1.DataBindings.Add("Text", binding, "Player1.HealthPoints");
+            progressBarPlayer1.DataBindings.Add("Value", binding, "Player1.HealthPoints");
+            lblHPPlayer2.DataBindings.Add("Text", binding, "Player2.HealthPoints");
+            progressBarPlayer2.DataBindings.Add("Value", binding, "Player2.HealthPoints");
+        }
         public void BlockGame(string _winner)
         {
             lblFinish.Visible = true;
@@ -106,6 +116,7 @@ namespace FightingClub_Nikita
             lblHPPlayer2.Text = player2.ToString();
             progressBarPlayer2.Value = player2;
         }
+
         public int Title
         {
             set
