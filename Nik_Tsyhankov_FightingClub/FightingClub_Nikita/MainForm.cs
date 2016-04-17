@@ -22,6 +22,15 @@ namespace FightingClub_Nikita
             NamePlayer1 = start.StartName;
         }
 
+        public void Binding()
+        {
+            lblPlayer2.DataBindings.Add("Text", bindingSource, "Player2.Name");
+            lblTitle.DataBindings.Add("Text", bindingSource, "Status");
+            lblHPPlayer1.DataBindings.Add("Text", bindingSource, "Player1.HealthPoints");
+            progressBarPlayer1.DataBindings.Add("Value", bindingSource, "Player1.HealthPoints");
+            lblHPPlayer2.DataBindings.Add("Text", bindingSource, "Player2.HealthPoints");
+            progressBarPlayer2.DataBindings.Add("Value", bindingSource, "Player2.HealthPoints");
+        }
         public void BlockGame(string _winner)
         {
             lblFinish.Visible = true;
@@ -45,28 +54,25 @@ namespace FightingClub_Nikita
         #region Events
         private void butHead_Click(object sender, EventArgs e)
         {
-            if (ButHeadClick != null) ButHeadClick(this, 
-                new EventArgsBodyParts(BodyParts._head));
+            ButHeadClick?.Invoke(this,new EventArgsBodyParts(BodyParts._head));
         }
 
         private void butBody_Click(object sender, EventArgs e)
         {
-            if (ButBodyClick != null) ButBodyClick(this,
-                new EventArgsBodyParts(BodyParts._body));
+            ButBodyClick?.Invoke(this, new EventArgsBodyParts(BodyParts._body));
         }
 
         private void butLeg_Click(object sender, EventArgs e)
         {
-            if (ButLegClick != null) ButLegClick(this,
-                new EventArgsBodyParts(BodyParts._leg));
+            ButLegClick?.Invoke(this,new EventArgsBodyParts(BodyParts._leg));
         }
         private void saveGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (ButSaveGameClick != null) ButSaveGameClick(this, EventArgs.Empty);
+            ButSaveGameClick?.Invoke(this, EventArgs.Empty);
         }
         private void loadGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (ButLoadGameClick != null) ButLoadGameClick(this, EventArgs.Empty);
+            ButLoadGameClick?.Invoke(this, EventArgs.Empty);
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -81,6 +87,10 @@ namespace FightingClub_Nikita
         #endregion
 
         #region Properties
+        public void SetBindingSource(IFighting process)
+        {
+            bindingSource.DataSource = process;
+        }
         public string NamePlayer1
         {
             get
@@ -92,30 +102,8 @@ namespace FightingClub_Nikita
                 lblPlayer1.Text = value;
             }
         }
-        public string NameCPUPlayer
-        {
-            set
-            {
-                lblPlayer2.Text = value;
-            }
-        }
-        public void HPPlayers(int player1, int player2)
-        {
-            lblHPPlayer1.Text = player1.ToString();
-            progressBarPlayer1.Value = player1;
-            lblHPPlayer2.Text = player2.ToString();
-            progressBarPlayer2.Value = player2;
-        }
-        public bool Title
-        {
-            set
-            {
-                lblTitle.Text = (value) ? "Block!" : "Atack!";
-            }
-        }
         public int Rounds
         {
-            get { return Int32.Parse(lblRounds.Text); }
             set
             {
                 lblRounds.Text = value.ToString();

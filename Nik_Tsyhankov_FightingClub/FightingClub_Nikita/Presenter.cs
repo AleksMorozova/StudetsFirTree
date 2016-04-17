@@ -18,20 +18,19 @@ namespace FightingClub_Nikita
             this._process = _process;
             this._view = _view;
             this._manager = _manager;
+            _view.SetBindingSource(_process);
+            _view.Binding();
             _process.Player1.Name = _view.NamePlayer1;
-            _view.NameCPUPlayer = _process.Player2.Name;
+
             SuscribeForm();
             SuscribePlayer(_process.Player1);
             SuscribePlayer(_process.Player2);
-
-            UpdateStats();
         }
 
         #region Forms' events
         private void _view_BodyPartClick(object sender, EventArgsBodyParts e)
         {
             _process.MakeStep(e.Part);
-            UpdateStats();
         }
         private void _manager_SaveGame(object sender, EventArgs e)
         {
@@ -44,7 +43,7 @@ namespace FightingClub_Nikita
             {
                 _process = _loadedGame;
                 _view.NamePlayer1 = _process.Player1.Name;
-                _view.NameCPUPlayer = _process.Player2.Name;
+                _view.SetBindingSource(_process);
                 _view.UnblockGame();
                 _view.ClearLog();
                 foreach (string item in _process.Log)
@@ -53,7 +52,7 @@ namespace FightingClub_Nikita
                 }
                 SuscribePlayer(_process.Player1);
                 SuscribePlayer(_process.Player2);
-                UpdateStats();
+                _process.NotifyPropertyChanged("");
             }
         }
         #endregion
@@ -105,13 +104,6 @@ namespace FightingClub_Nikita
             _player.Block -= _view_AddLogInfoBlock;
             _player.Wound -= _view_AddLogInfoWound;
             _player.Death -= _view_EndGame;
-        }
-        private void UpdateStats()
-        {
-            _view.HPPlayers(_process.Player1.HealthPoints,
-                _process.Player2.HealthPoints);
-            _view.Rounds = _process.Round;
-            _view.Title = (_process.Round % 2 == 0) ? true : false;
         }
     }
 }

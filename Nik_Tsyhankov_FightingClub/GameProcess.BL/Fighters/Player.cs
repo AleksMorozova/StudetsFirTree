@@ -34,8 +34,8 @@ namespace GameProcess.BL.Fighters
                 if (_hp < 0)
                 {
                     _hp = 0;
-                    if (Death != null) Death(this,
-                    new EventArgsFighter(HealthPoints, Name));
+                    Death?.Invoke(this,
+                        new EventArgsFighter(HealthPoints, Name));
                 }
             }
         }
@@ -51,7 +51,7 @@ namespace GameProcess.BL.Fighters
         {
             if (_hited == _blocked)
             {
-                if (Block != null) Block(this, 
+                Block?.Invoke(this,
                     new EventArgsFighter(HealthPoints, Name));
             }
             else
