@@ -10,20 +10,19 @@ namespace OOP_Song
     {
         static void Main(string[] args)
         {
-            Forest forest = new Forest();
-            Sezon sezon = new Sezon(Sezons.spring);
-            forest.AddSezon(sezon);
+            Season sezon = new Season(Seasons.spring);
+            Forest forest = new Forest(sezon);                        
             forest.AddTree(new Fir("Fir"));          
             forest.TreesGrow();
-            sezon.OnSezonChanged(Sezons.spring);
+            sezon.OnSezonChanged(Seasons.summer);
 
             Console.WriteLine("______________");
             Console.WriteLine("Added new tree");
-            Console.WriteLine("______________");
+            Console.WriteLine("_____________");
 
             forest.AddTree(new Maple("Maple_Tree"));
             forest.TreesGrow();
-            sezon.OnSezonChanged(Sezons.winter);
+            sezon.OnSezonChanged(Seasons.autumn);
 
             Console.ReadKey();
         }

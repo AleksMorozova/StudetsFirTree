@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_Song
 {
-    enum Colors { green, orange, grey, no_color }
-    enum Figures { standed, slender }
-    public enum Sezons { winter, summer, autumn, spring}
+    public enum Colors { green, orange, grey, no_color }
+    public enum Figures { standed, slender }
+    public enum Seasons { winter, summer, autumn, spring}
 }

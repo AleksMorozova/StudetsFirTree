@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace OOP_Song
 {    
-    interface IWildlife
+    public interface IWildlife
     {
         string Name { get; set; }
         Colors color { get; }

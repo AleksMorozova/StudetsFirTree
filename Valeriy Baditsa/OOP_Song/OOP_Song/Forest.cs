@@ -1,22 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OOP_Song
 {
-    class Forest
+    public class Forest
     {
-        List<ITree> treesList = new List<ITree>();
-        Sezon sezon;
+        List<ITree> treesList;
 
         public void AddTree(ITree tree)
         {
             treesList.Add(tree);
-            sezon.SezonChanged += tree.reactionsTreesOn_SezonChanged;
-            Console.WriteLine("{0} is in the forest", tree.Name);            
+            Console.WriteLine("{0} is in the forest", tree.Name);
         }
+
+        public Forest(Season season)
+        {
+            treesList = new List<ITree>();
+            season.SeasonChanged += season_SezonChanged;
+        }
+
+        private void season_SezonChanged(object sender, SeasonEventArgs e)
+        {
+            foreach (ITree tree in treesList)
+            {
+                tree.reactionTreeOn_SezonChanged(e);
+            }
+        }        
 
         public void TreesGrow()
         {
@@ -24,12 +33,7 @@ namespace OOP_Song
             {
                 tree.Grow();
             }
-        }
-
-        public void AddSezon(Sezon _sezon)
-        {
-            sezon = _sezon;
-        }
+        }       
         
     }
 }
