@@ -10,10 +10,11 @@ namespace ISD_Course_task_fir_tree
     {
         static void Main(string[] args)
         {
-            Forest MyForest = new Forest();
+            Year yearInForest = new Year();
+            Forest MyForest = new Forest(yearInForest);
             MyForest.AddTree(new FirTree("Yolochka", "лесу"));
             MyForest.GrowAllPlants();
-            Year.NextSeason();
+            yearInForest.NextSeason();
         }
     }
 }
