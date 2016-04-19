@@ -51,9 +51,5 @@ namespace ISD.Fir_tree.Classes
                 tree.ChangeSeason(season);
             }
         }
-        public Tree GetTree(Tree tree)
-        {
-            return this.trees[this.trees.IndexOf(tree)];
-        }
     }
 }
