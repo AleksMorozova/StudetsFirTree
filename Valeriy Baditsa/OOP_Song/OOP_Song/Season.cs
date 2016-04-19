@@ -4,7 +4,7 @@ namespace OOP_Song
 {   
     public class Season
     {
-        public Seasons CurrentSeazon { get; set; }
+        Seasons CurrentSeazon { get; set; }
         double Temperature {get; set; }
 
         public Season(Seasons currentSeason)

@@ -31,7 +31,7 @@ namespace OOP_Song
            Console.WriteLine("{0} is growing", this.Name);
        }
        
-       public void reactionTreeOn_SezonChanged(SeasonEventArgs e)
+       public void ChangeState(SeasonEventArgs e)
        {
            Console.WriteLine("current sezon = {0}, {1} color = {2}, {1} figure = {3}",
                               e.CurrentSezon, this.Name, this.color, this.Figure);

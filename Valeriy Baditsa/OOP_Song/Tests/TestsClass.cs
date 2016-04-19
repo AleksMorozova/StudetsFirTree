@@ -21,7 +21,7 @@ namespace OOP_Song
         }
 
         [TestMethod]
-        public void TestReactionFirOnSezon()
+        public void TestReactionFirOnSezon_winter()
         {                        
             forest.AddTree(fir);
             season.OnSezonChanged(Seasons.winter);
@@ -29,13 +29,30 @@ namespace OOP_Song
             Assert.AreEqual(fir.Figure, Figures.slender);
         }
 
+        public void TestReactionFirOnSezon_summer()
+        {
+            forest.AddTree(fir);
+            season.OnSezonChanged(Seasons.summer);
+            Assert.AreEqual(fir.color, Colors.green);
+            Assert.AreEqual(fir.Figure, Figures.slender);
+        }
+
         [TestMethod]
-        public void TestReactionMapleOnSezon()
+        public void TestReactionMapleOnSezon_autumn()
         {                                    
             forest.AddTree(maple);
             season.OnSezonChanged(Seasons.autumn);
             Assert.AreEqual(maple.color, Colors.orange);
             Assert.AreEqual(maple.Figure, Figures.slender);
+        }
+
+        [TestMethod]
+        public void TestReactionMapleOnSezon_summer()
+        {
+            forest.AddTree(maple);
+            season.OnSezonChanged(Seasons.summer);
+            Assert.AreEqual(maple.color, Colors.green);
+            Assert.AreEqual(maple.Figure, Figures.standed);
         }
 
         [TestMethod]
