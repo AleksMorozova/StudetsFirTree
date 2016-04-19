@@ -7,8 +7,8 @@ namespace Song
 {
     public class Forest
     {
-        public List<Tree> Trees{get;private set;}
-        public List<Animal> Chars { get; private set; } 
+        protected List<Tree> Trees{get;private set;}
+        protected List<Animal> Chars { get; private set; } 
 
         public Forest(ISeasonProvider year)
         {

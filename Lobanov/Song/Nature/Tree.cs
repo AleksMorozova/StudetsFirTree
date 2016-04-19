@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Song
 {
-    public class Tree : ICuttable, IColoured, ISlim
+    public abstract class Tree 
     {
         private bool cutted = false;
         protected int size = 1;
@@ -29,24 +29,16 @@ namespace Song
             Cutted = true;
         }
 
-        public virtual bool IsSlim(Seasons season)
-        {
-            return false;
-        }
-
-        public virtual Colors GetColor(Seasons season)
-        {
-            return Colors.Brown;
-        }
+        public abstract bool IsSlim(Seasons season);
+        public  abstract Colors GetColor(Seasons season);
+        
         public int GetSize()
         {
             return size;
         }
 
-        public virtual void Grow()
-        {
-            size++;
-        }
+        public abstract void Grow();
+        
         
         public virtual void SeasonHandler(SeasonEventArgs e)
         {

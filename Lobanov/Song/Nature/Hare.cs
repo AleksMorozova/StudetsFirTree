@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Song
 {
-   public class Hare:Animal,IColoured
+   public class Hare:Animal
     {
 
 

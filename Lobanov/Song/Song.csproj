@@ -43,10 +43,7 @@
     <Compile Include="Enums.cs" />
     <Compile Include="Frost.cs" />
     <Compile Include="Holiday.cs" />
-    <Compile Include="Interfaces\IColoured.cs" />
-    <Compile Include="Interfaces\ICuttable.cs" />
     <Compile Include="Interfaces\ISeasonProvider.cs" />
-    <Compile Include="Interfaces\ISlim.cs" />
     <Compile Include="Kid.cs" />
     <Compile Include="Nature\Animal.cs" />
     <Compile Include="Nature\Forest.cs" />
