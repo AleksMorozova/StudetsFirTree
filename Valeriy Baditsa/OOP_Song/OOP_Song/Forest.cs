@@ -16,14 +16,14 @@ namespace OOP_Song
         public Forest(Season season)
         {
             treesList = new List<ITree>();
-            season.SeasonChanged += season_SezonChanged;
+            season.SeasonChanged += season_OnSeasonChanged;
         }
 
-        private void season_SezonChanged(object sender, SeasonEventArgs e)
+        private void season_OnSeasonChanged(object sender, SeasonEventArgs e)
         {
             foreach (ITree tree in treesList)
             {
-                tree.reactionTreeOn_SezonChanged(e);
+                tree.ChangeState(e);
             }
         }        
 

@@ -24,7 +24,7 @@ namespace OOP_Song
             Console.WriteLine("{0} is GROWING", this.Name);
         }
 
-        public void reactionTreeOn_SezonChanged(SeasonEventArgs e)
+        public void ChangeState(SeasonEventArgs e)
         {
             switch (e.CurrentSezon)
             {
