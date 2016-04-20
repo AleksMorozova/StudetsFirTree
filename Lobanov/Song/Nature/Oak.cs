@@ -19,7 +19,14 @@ namespace Song
 
         public override Colors GetColor(Seasons season)
         {
-            return Colors.Brown;
+            if (season == Seasons.Winter)
+            {
+                return Colors.Brown;
+            }
+            else
+            {
+                return Colors.Green;
+            }
         }
 
         public override void Grow()

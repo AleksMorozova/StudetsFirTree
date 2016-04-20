@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Song
 {
-    internal class Frost
+    public class Frost
     {
         public void Freeze(Fir fir)
         {
