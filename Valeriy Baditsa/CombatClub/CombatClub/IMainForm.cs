@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 
 namespace CombatClub
 {
     public interface IMainForm
-    {      
-        void lblSetHpPlayer(int hp);
-        void lblSetHpComp(int hp);
-        void NewValueViewPlayer(string name, int hp);
-        void NewValueViewComp(string name, int hp);
-        void setName(string namePlayer,  string nameComp);
+    {
+        ProgressBar ProgressBar_Player { get; }
+        ProgressBar ProgressBar_CompName { get; }
+        
+        void SetBinding(IPlayer player, IPlayer comp);
+                
         void buttonText(string text);
         bool buttonVisible {set; }
         

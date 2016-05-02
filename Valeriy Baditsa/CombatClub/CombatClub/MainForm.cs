@@ -11,8 +11,7 @@ using System.Windows.Forms;
 namespace CombatClub
 {    
     public partial class MainForm : Form, IMainForm
-    {
-        const string FileName = @"C:\Users\HP\Documents\GitHub\StudentsFightClub\FightClub\ValeriyBaditsa\CombatClub\bin\Debug\";
+    {        
         Presenter presenter;
         public event EventHandler HeadClick; 
         public event EventHandler BodyClick;
@@ -32,23 +31,41 @@ namespace CombatClub
             loadGameToolStripMenuItem.Click += loadGameToolStripMenuItem_Click;
             saveGameToolStripMenuItem.Click += saveGameToolStripMenuItem_Click;
 
-            presenter = new Presenter(this);
+            presenter = new Presenter(this);                       
         }
 
-        void saveGameToolStripMenuItem_Click(object sender, EventArgs e)
-        {           
-            if (saveGameToolStripMenuItemClick != null)
-                saveGameToolStripMenuItemClick(this, EventArgs.Empty);            
-        }        
+        public void SetBinding(IPlayer player, IPlayer comp)
+        {
+            Binding binding;           
+            binding = new Binding("Text", player, "Hp");
+            labelPlayerHP.DataBindings.Add(binding);
+            binding = new Binding("Text", comp, "Hp");
+            labelCompPlayerHP.DataBindings.Add(binding);
 
-        void loadGameToolStripMenuItem_Click(object sender, EventArgs e)
-        {            
-            if (loadGameToolStripMenuItemClick != null)
-                 loadGameToolStripMenuItemClick(this, EventArgs.Empty);
+            binding = new Binding("Text", player, "Name");
+            labelPlayerName.DataBindings.Add(binding);
+            binding = new Binding("Text", comp, "Name");
+            labelCompPlayerName.DataBindings.Add(binding);
+                        
+            binding = new Binding("Value", player, "Hp");
+            progressBarPlayer.DataBindings.Add(binding);
+
+            //progressBarComputer.Maximum = comp.HP;
+            binding = new Binding("Value", comp, "Hp");
+            progressBarComputer.DataBindings.Add(binding);            
         }
+
+        public ProgressBar ProgressBar_Player 
+        {
+            get { return progressBarPlayer; }            
+        }
+        public ProgressBar ProgressBar_CompName 
+        {
+            get { return progressBarComputer; }
+        }       
 
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
-        {        
+        {              
             if (newGameToolStripMenuItemClick != null)
                 newGameToolStripMenuItemClick(this, EventArgs.Empty);
         }        
@@ -73,41 +90,7 @@ namespace CombatClub
                 buttonLegs.Visible = value;
                 buttonBody.Visible = value;
             }
-        }      
-
-        public void NewValueViewComp(string name, int hp)
-        {
-            labelCompPlayer.Text = name;
-            labelCompPlayerHP.Text = hp.ToString();
-            progressBarComputer.Maximum = hp;
-            progressBarComputer.Value = hp;
-        }
-
-        public void NewValueViewPlayer(string name, int hp)
-        {
-            labelPlayer.Text = name;
-            labelPlayerHP.Text = hp.ToString();
-            progressBarPlayer.Maximum = hp;
-            progressBarPlayer.Value = hp;
-        }
-
-        public void lblSetHpPlayer(int hp)
-        {
-            labelPlayerHP.Text = hp.ToString();            
-            progressBarPlayer.Value = hp;            
-        }
-
-        public void lblSetHpComp(int hp)
-        {
-            labelCompPlayerHP.Text = hp.ToString();
-            progressBarComputer.Value = hp;
-        }
-
-        public void setName(string namePlayer, string nameComp )
-        {
-            labelPlayer.Text = namePlayer;
-            labelCompPlayer.Text = nameComp;
-        }                             
+        }                     
         
         void buttonHead_Click(object sender, EventArgs e)
         {
@@ -125,6 +108,19 @@ namespace CombatClub
         {
             if (BodyClick != null)
                 BodyClick(this, EventArgs.Empty);
+        }
+
+        void saveGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (saveGameToolStripMenuItemClick != null)
+                saveGameToolStripMenuItemClick(this, EventArgs.Empty);
+        }
+
+        void loadGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (loadGameToolStripMenuItemClick != null)
+                loadGameToolStripMenuItemClick(this, EventArgs.Empty);
         }
                                 
     }
