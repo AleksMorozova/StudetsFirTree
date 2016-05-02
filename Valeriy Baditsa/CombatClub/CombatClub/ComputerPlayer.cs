@@ -16,6 +16,10 @@ namespace CombatClub
             : base(loadPlayer)
         { }
 
+        public ComputerPlayer()
+            : base()
+        { }
+
         public ComputerPlayer(string name, int hp) 
              : base (name, hp)
         {            
@@ -44,8 +48,7 @@ namespace CombatClub
             Attacked = (BodyParts)numberBodyPart;
             return Attacked;
         }
-
-        // рандомный выбор защищаемой части тела
+        
         public override void SetBlock(BodyParts bodyPart)
         {
             bodyPart = RandomBodyPart();

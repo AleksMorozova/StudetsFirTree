@@ -4,7 +4,7 @@ using System.IO;
 
 namespace CombatClub
 {
-    class SaveGameManager
+    static class SerializationManager
     {
         static public void SaveProcGame(Presenter presenter)
         {      

@@ -1,31 +1,61 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace CombatClub
 {     
-    enum BodyParts {head, body, legs};
+    public enum BodyParts {head, body, legs};
 
     [Serializable]
-    class Player : IPlayer
-    {          
-        public string Name { get; set; }
+     class Player : IPlayer , INotifyPropertyChanged
+    {
+        string name;
+        public string Name 
+        {
+            get { return name; }
+            set
+            {
+                if (value != this.name)
+                {
+                    this.name = value;
+                    NotifyPropertyChanged("Name");
+                }
+            }
+        }
         public BodyParts Blocked { get; set; }
-        public int Hp { get; set; }        
+        private int Hp;
+        public int HP
+        {
+            get { return  Hp; }
+            set
+            {
+                if (value != this.Hp)
+                {
+                    this.Hp = value;
+                    NotifyPropertyChanged("Hp");
+                }
+            }
+        }        
         int Damage { get; set; }
         public bool Attacker { get; set; }
         public BodyParts Attacked { get; set; }
 
         public Player(Player loadPlayer)
         {
-            this.Name = loadPlayer.Name;
-            this.Hp = loadPlayer.Hp;
+            this.name = loadPlayer.name;
+            this.HP = loadPlayer.Hp;
             this.Blocked = loadPlayer.Blocked;
             this.Attacker = loadPlayer.Attacker;
             this.Attacked = loadPlayer.Attacked;
             this.Damage = loadPlayer.Damage;
+        }
+
+        public Player() { }
+
+        public void Init(IPlayer player)
+        {            
+            this.Attacker = player.Attacker;
+            this.Name = player.Name;
+            this.HP = player.HP;
         }
 
         public Player(string name, int hp)
@@ -33,6 +63,16 @@ namespace CombatClub
             this.Name = name;
             this.Hp = hp;
             this.Attacker = true;
+        }
+        [field: NonSerialized]
+        public event PropertyChangedEventHandler PropertyChanged;
+        
+        private void NotifyPropertyChanged(String info)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(info));
+            }
         }
 
         virtual public BodyParts ReturnAttackPartBody()
@@ -50,8 +90,8 @@ namespace CombatClub
             else
                 if (bodyPartAttack != Blocked)
                 {
-                    Hp--;
-                    if (Hp > 0)
+                    HP--;
+                    if (HP   > 0)
                     {
                         OnWound();
                     }

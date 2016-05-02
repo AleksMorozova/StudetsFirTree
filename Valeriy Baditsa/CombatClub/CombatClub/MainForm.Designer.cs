@@ -36,15 +36,15 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.progressBarPlayer = new System.Windows.Forms.ProgressBar();
             this.progressBarComputer = new System.Windows.Forms.ProgressBar();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.labelPlayer = new System.Windows.Forms.Label();
-            this.labelCompPlayer = new System.Windows.Forms.Label();
+            this.labelPlayerName = new System.Windows.Forms.Label();
+            this.labelCompPlayerName = new System.Windows.Forms.Label();
             this.labelPlayerHP = new System.Windows.Forms.Label();
             this.labelCompPlayerHP = new System.Windows.Forms.Label();
-            this.loadGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -116,6 +116,18 @@
             this.newGameToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.newGameToolStripMenuItem.Text = "New game";
             // 
+            // loadGameToolStripMenuItem
+            // 
+            this.loadGameToolStripMenuItem.Name = "loadGameToolStripMenuItem";
+            this.loadGameToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.loadGameToolStripMenuItem.Text = "Load game";
+            // 
+            // saveGameToolStripMenuItem
+            // 
+            this.saveGameToolStripMenuItem.Name = "saveGameToolStripMenuItem";
+            this.saveGameToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.saveGameToolStripMenuItem.Text = "Сохранить игру";
+            // 
             // progressBarPlayer
             // 
             this.progressBarPlayer.Location = new System.Drawing.Point(26, 53);
@@ -143,21 +155,21 @@
             this.listBox1.Size = new System.Drawing.Size(634, 160);
             this.listBox1.TabIndex = 9;
             // 
-            // labelPlayer
+            // labelPlayerName
             // 
-            this.labelPlayer.AutoSize = true;
-            this.labelPlayer.Location = new System.Drawing.Point(23, 37);
-            this.labelPlayer.Name = "labelPlayer";
-            this.labelPlayer.Size = new System.Drawing.Size(0, 13);
-            this.labelPlayer.TabIndex = 10;
+            this.labelPlayerName.AutoSize = true;
+            this.labelPlayerName.Location = new System.Drawing.Point(23, 37);
+            this.labelPlayerName.Name = "labelPlayerName";
+            this.labelPlayerName.Size = new System.Drawing.Size(0, 13);
+            this.labelPlayerName.TabIndex = 10;
             // 
-            // labelCompPlayer
+            // labelCompPlayerName
             // 
-            this.labelCompPlayer.AutoSize = true;
-            this.labelCompPlayer.Location = new System.Drawing.Point(625, 37);
-            this.labelCompPlayer.Name = "labelCompPlayer";
-            this.labelCompPlayer.Size = new System.Drawing.Size(0, 13);
-            this.labelCompPlayer.TabIndex = 11;
+            this.labelCompPlayerName.AutoSize = true;
+            this.labelCompPlayerName.Location = new System.Drawing.Point(625, 37);
+            this.labelCompPlayerName.Name = "labelCompPlayerName";
+            this.labelCompPlayerName.Size = new System.Drawing.Size(0, 13);
+            this.labelCompPlayerName.TabIndex = 11;
             // 
             // labelPlayerHP
             // 
@@ -175,18 +187,6 @@
             this.labelCompPlayerHP.Size = new System.Drawing.Size(0, 13);
             this.labelCompPlayerHP.TabIndex = 13;
             // 
-            // loadGameToolStripMenuItem
-            // 
-            this.loadGameToolStripMenuItem.Name = "loadGameToolStripMenuItem";
-            this.loadGameToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.loadGameToolStripMenuItem.Text = "Load game";
-            // 
-            // saveGameToolStripMenuItem
-            // 
-            this.saveGameToolStripMenuItem.Name = "saveGameToolStripMenuItem";
-            this.saveGameToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.saveGameToolStripMenuItem.Text = "Сохранить игру";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,8 +194,8 @@
             this.ClientSize = new System.Drawing.Size(701, 421);
             this.Controls.Add(this.labelCompPlayerHP);
             this.Controls.Add(this.labelPlayerHP);
-            this.Controls.Add(this.labelCompPlayer);
-            this.Controls.Add(this.labelPlayer);
+            this.Controls.Add(this.labelCompPlayerName);
+            this.Controls.Add(this.labelPlayerName);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.progressBarComputer);
             this.Controls.Add(this.progressBarPlayer);
@@ -230,8 +230,8 @@
         private System.Windows.Forms.ProgressBar progressBarPlayer;
         private System.Windows.Forms.ProgressBar progressBarComputer;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label labelPlayer;
-        private System.Windows.Forms.Label labelCompPlayer;
+        private System.Windows.Forms.Label labelPlayerName;
+        private System.Windows.Forms.Label labelCompPlayerName;
         private System.Windows.Forms.Label labelPlayerHP;
         private System.Windows.Forms.Label labelCompPlayerHP;
         private System.Windows.Forms.ToolStripMenuItem loadGameToolStripMenuItem;

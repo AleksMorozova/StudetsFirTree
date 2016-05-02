@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CombatClub
 {  
-    interface IPlayer
+    public interface IPlayer
     {
         string Name { get; set; }
-        int Hp { get; set; }
+        int HP { get; set; }
         bool Attacker { get; set; }
         BodyParts ReturnAttackPartBody();
         void GetHit(BodyParts bodyPartAttack);
@@ -17,5 +17,7 @@ namespace CombatClub
         event EventHandler<PlayerEventArgs> Block;
         event EventHandler<PlayerEventArgs> Wound;
         event EventHandler<PlayerEventArgs> Death;
+
+        void Init(IPlayer player);
     }
 }
